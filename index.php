@@ -8,6 +8,9 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/alertify.min.css" />
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" />
+
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -21,8 +24,11 @@
 						<img class="img_logo" src="images/logo_fiscalia_azul.png" /><h1><a href="#">GESTOR SOLICITUDES FISCALIA</a></h1>
 						<nav class="links">
 							<ul>
+								<li><a href="#" id="btn_registro">Registro</a></li>
+								<li><a href="#" id="btn_login">Iniciar sesion</a></li>
 								<li><a href="#" id="btn_solicitud">Solicitud</a></li>
-								<li><a href="#">Contacto</a></li>
+								<li><a href="#" id="btn_solicitudes">Ver solicitudes</a></li>
+								<li><a href="#" id="btn_cerrar">Salir</a></li>
 								
 							</ul>
 						</nav>
@@ -60,12 +66,7 @@
 											
 										</a>
 									</li>
-									<li>
-										<a href="#">
-											<h3>Consultar estado</h3>
-											
-										</a>
-									</li>
+									
 									<li>
 										<a href="#">
 											<h3>Terminos</h3>
@@ -84,7 +85,7 @@
 						<!-- Actions -->
 							<section>
 								<ul class="actions vertical">
-									<li><a href="#" class="button big fit">Log In</a></li>
+									<li><a id="btn_login" class="button big fit">Iniciar sesion</a></li>
 								</ul>
 							</section>
 
@@ -104,6 +105,11 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/alertify.min.js"></script>
+			<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.0.2/js/responsive.bootstrap.min.js "></script>
 
 			
 

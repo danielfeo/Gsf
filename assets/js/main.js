@@ -2,6 +2,10 @@
 
 (function($) {
 
+	$('#btn_solicitudes').hide();
+	$('#btn_solicitud').hide();
+	$('#btn_cerrar').hide();
+
 	function controlAjaxVista (vistaActual) {
 	$.ajax(
 		{
@@ -16,14 +20,24 @@
 		});
 }
 
-$('body').delegate('#btn_solicitud','click',function(){
+		$('body').delegate('#btn_registro','click',function(){
 
 			
-  			var id= $(this).data('id');
-			
-			$( "#DIV_CONTENEDOR" ).remove();
+  				
+		$( "#DIV_CONTENEDOR" ).remove();
 
 			controlAjaxVista(1);
+
+		
+		});
+
+$('body').delegate('#btn_login','click',function(){
+
+			
+  				
+			$( "#DIV_CONTENEDOR" ).remove();
+
+			controlAjaxVista(2);
 
 		
 		});

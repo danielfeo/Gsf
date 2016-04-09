@@ -17,7 +17,7 @@
 			<form class="form-basic">
 
             <div class="form-title-row">
-                <h1>Formulario de resgistro</h1>
+                <h1>Formulario de registro</h1>
             </div>
 
              <div class="form-row">

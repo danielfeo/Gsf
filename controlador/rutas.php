@@ -1,10 +1,80 @@
 <?php
 
 
-
 include_once ('Usuario.controller.php');
 
+if ($_REQUEST['ruta'] == 'solicitud'){
 
+session_start();
+ $descripcion=$_REQUEST['descripcion'];
+ $ciudad=$_REQUEST['ciudad'];
+ $id_usuario=$_SESSION['id'];
+ $filePath='';
+
+if(isset($_FILES['file1'])){			
+
+
+$uploadDir = '../documentos/';
+$fileName = $_FILES['file1']['name'];
+$tmpName = $_FILES['file1']['tmp_name'];
+$fileSize = $_FILES['file1']['size'];
+$fileType = $_FILES['file1']['type'];
+
+$filePath = $uploadDir . $fileName;
+
+	if ($fileSize >10000000)
+	{
+		echo 'El archivo no debe superar los 10 MB';
+		 exit();	
+	}
+
+	if (!($fileType =="text/pdf" || $fileType =="application/pdf")){
+	echo 'El archivo debe ser formato pdf';
+			 exit();
+			 }
+
+
+$ext = substr(strrchr($fileName, "."), 1);
+
+
+
+$randName = md5(rand() * time());
+
+
+
+$filePath = $uploadDir . $randName . '.' . $ext;
+
+$result = move_uploaded_file($tmpName, $filePath);
+
+if (!$result) {
+	echo 'No se subio el archivo';
+    exit();
+}
+
+$filePath = $randName . '.' . $ext;
+
+}
+
+
+
+ $Usuario = new Usuario();
+  
+
+ echo $Usuario->insertar_solicitud($id_usuario,$ciudad,$descripcion,$filePath);
+
+}//FIN METODO SOLICITUD
+
+
+if ($_REQUEST['ruta'] == 'listar_solicitudes'){
+
+  
+
+ $Usuario = new Usuario();
+  
+
+ echo $Usuario->listar_solicitudes();
+
+}//FIN METODO LISTAR SOLICITUDES
 
 if ($_REQUEST['ruta'] == 'listar_paises'){
 
@@ -15,8 +85,20 @@ if ($_REQUEST['ruta'] == 'listar_paises'){
 
  echo $Usuario->listar_pais();
 
-}
+}//FIN METODO LISTAR PAIS
 
+
+if ($_REQUEST['ruta'] == 'logear'){
+
+ $documento=$_REQUEST['documento'];
+ $clave=$_REQUEST['clave'];
+
+ $Usuario = new Usuario();
+  
+
+ echo $Usuario->logear($documento,$clave);
+
+}
 
 
 if ($_REQUEST['ruta'] == 'listar_ciudades'){

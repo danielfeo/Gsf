@@ -5,6 +5,9 @@ require('../modelo/bd.class.php');
 
 class Usuario extends Db
 {
+
+					
+
 					private function contra(){
 
 					$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
@@ -15,7 +18,69 @@ class Usuario extends Db
 					return $cad;
 
 					}
-								
+					
+					public function insertar_solicitud($id_usuario,$ciudad,$descripcion,$filePath){
+
+						$conexion = $this->conexion();
+
+						$retorna = '';
+						$consulta = "INSERT INTO
+						 `gestor_solicitudes`.`solicitud`
+						 (`id`,`dependencia`,`descripcion`,`fichero`,`id_usuario`,`estado`
+						 	,`id_asignado`,`fk_id_ciudad`,`fk_cod_pais`)
+						  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'
+						  	$ciudad','CO');";
+ 								
+									if ($conexion->query($consulta) === TRUE) {
+									    $retorna .= "Solicitud tramitada correctamente";
+									} else {
+									    $retorna .= "Solicitud no tramitada" . $conn->error;
+									}
+
+
+					}
+
+					public function listar_solicitudes(){
+
+						$retorna='';
+
+						$conexion = $this->conexion();
+
+						session_start();
+
+						$id_usuario = $_SESSION['id'];
+
+					 	$consulta = "call sp_taer_solicitudes($id_usuario);";
+						$retorna .= '<table id="tabla_solicitudes"
+						 class="table table-striped table-bordered dt-responsive nowrap" 
+						 cellpadding="0" cellspacing="0" border="0" class="display" id="tabla_solicitudes">
+				            <thead>
+				            <tr>
+				            <th>descripcion</th>
+				            <th>fichero</th>
+				            <th>estado</th>
+				            </tr>
+				            </thead>
+				            <tfoot>
+				            <tr>
+				            <th></th>
+				            <th></th>
+				            </tr>
+				            </tfoot>
+				            <tbody style="color:black"><tr>';
+						    
+						    if ($resultado = $conexion->query($consulta)) {
+						    while ($fila = $resultado->fetch_row()) {
+						         $retorna .= '<td>"'.$fila[2].'"</td><td>'.$fila[3].'</td><td>'.$fila[4].'</td>';
+						  		  $retorna .= '<tr>';
+						    }
+					    $resultado->close();
+						}
+						  $retorna .= '</tbody><table>';
+
+			 			return $retorna;
+
+					}
 	
 					public function listar_pais()
 					{
@@ -32,6 +97,32 @@ class Usuario extends Db
 							    $resultado->close();
 								}
 					 return $retorna;
+					}
+
+					public function logear($doc,$clave){
+					
+					$retorna='';
+					$rol='';
+					session_start();
+
+								$conexion = $this->conexion();
+
+								$consulta = " CALL sp_logear('$doc','$clave'); ";
+
+							   if ($resultado = $conexion->query($consulta)) {
+								    while ($fila = $resultado->fetch_row()) {
+								 		$_SESSION['id']=$fila[0];
+								 		$_SESSION['nombre']=$fila[3];
+								 		$_SESSION['apellido']=$fila[4];
+								 		$_SESSION['rol']=$fila[13];
+								 		$rol=$fila[13];
+								    }
+							    $resultado->close();
+								}
+
+					return $rol;
+
+
 					}
 
 						public function listar_ciudad($pais)
