@@ -27,9 +27,9 @@ class Usuario extends Db
 						$consulta = "INSERT INTO
 						 `gestor_solicitudes`.`solicitud`
 						 (`id`,`dependencia`,`descripcion`,`fichero`,`id_usuario`,`estado`
-						 	,`id_asignado`,`fk_id_ciudad`,`fk_cod_pais`)
+						 	,`id_asignado`,`fk_id_ciudad`,`fk_cod_pais`,fecha`)
 						  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'
-						  	$ciudad','CO');";
+						  	$ciudad','CO','".date("Y-m-d")."');";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Solicitud tramitada correctamente";
@@ -39,7 +39,14 @@ class Usuario extends Db
 
 
 					}
-
+					private function validar_estado($b){
+						if($b==0){
+						$r='http://es.downloadicons.net/sites/default/files/icono-de-espera-7042.png';}
+						if($b==1){
+						$r='http://es.downloadicons.net/sites/default/files/icono-de-espera-7042.png';
+						}
+						return $r;
+					}
 					public function listar_solicitudes(){
 
 						$retorna='';
@@ -51,32 +58,30 @@ class Usuario extends Db
 						$id_usuario = $_SESSION['id'];
 
 					 	$consulta = "call sp_taer_solicitudes($id_usuario);";
-						$retorna .= '<table id="tabla_solicitudes"
-						 class="table table-striped table-bordered dt-responsive nowrap" 
-						 cellpadding="0" cellspacing="0" border="0" class="display" id="tabla_solicitudes">
-				            <thead>
-				            <tr>
-				            <th>descripcion</th>
-				            <th>fichero</th>
-				            <th>estado</th>
-				            </tr>
-				            </thead>
-				            <tfoot>
-				            <tr>
-				            <th></th>
-				            <th></th>
-				            </tr>
-				            </tfoot>
-				            <tbody style="color:black"><tr>';
+						$retorna .= '<table id="listTable" border="1"  cellpadding="5">
+					        <thead>
+					            <tr>
+					                <th>Descripción</th>
+					                <th>Documento</th>
+					                <th>Estado</th>
+					                <th>Solicitado en</th>
+
+					            </tr>
+					        </thead>
+				            <tbody><tr>';
 						    
 						    if ($resultado = $conexion->query($consulta)) {
 						    while ($fila = $resultado->fetch_row()) {
-						         $retorna .= '<td>"'.$fila[2].'"</td><td>'.$fila[3].'</td><td>'.$fila[4].'</td>';
-						  		  $retorna .= '<tr>';
+
+						         $retorna .= '<td> '.$fila[2].' </td>
+						         <td><a href="documentos/'.$fila[3].'">
+						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>
+						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td><td>'.$fila[9].'</td>';
+						  		  $retorna .= '</tr>';
 						    }
 					    $resultado->close();
 						}
-						  $retorna .= '</tbody><table>';
+						  $retorna .= '</tbody> </table>';
 
 			 			return $retorna;
 

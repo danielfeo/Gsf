@@ -34,13 +34,14 @@ $('#btn_cerrar').click(function(){
 	        success: function(formularioResultado)
 	         {
 	         $('#cont_tabla_solicitudes').html(formularioResultado);
-	         }
+	         $('#listTable').dataTable( { "sPaginationType": "full_numbers" , "language": {
+                    "url": "assets/js/Spanish.json"
+                }} ); 
+             }
          });
 
     $('#cont_tabla_solicitudes').show();
-    $('#tabla_solicitudes').DataTable( {
-   
-	} );
+
 
 
 	});
