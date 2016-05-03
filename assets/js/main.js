@@ -5,10 +5,14 @@
 	$('#btn_solicitudes').hide();
 	$('#btn_solicitud').hide();
 	$('#btn_cerrar').hide();
-
+	$('#btn_crear_usuarios').hide();
+    $('#btn_asignar').hide();
+    $('#btn_admin').hide();
+    $('#lista_Admin').hide();
 	function controlAjaxVista (vistaActual) {
+		
 	$.ajax(
-		{
+	{
 		url: 'controlador/vistas.controller.php',
 		type: 'POST',
 		dataType: 'html',
@@ -17,8 +21,9 @@
          {
          $('#main').append(formularioResultado);
          }		
-		});
-}
+	});
+	
+	}
 
 		$('body').delegate('#btn_registro','click',function(){
 

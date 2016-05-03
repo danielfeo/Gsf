@@ -28,11 +28,15 @@
 						<img class="img_logo" src="images/logo_fiscalia_azul.png" /><h1><a href="#">GESTOR SOLICITUDES FISCALIA</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#" id="btn_registro">Registro</a></li>
-								<li><a href="#" id="btn_login">Iniciar sesion</a></li>
-								<li><a href="#" id="btn_solicitud">Solicitud</a></li>
-								<li><a href="#" id="btn_solicitudes">Ver solicitudes</a></li>
-								<li><a href="#" id="btn_cerrar">Salir</a></li>
+								<li id="btn_registro"><a href="#" >Registro</a></li>
+								<li id="btn_login"><a href="#" >Iniciar sesion</a></li>
+								<li id="btn_solicitud"><a href="#" >Solicitud</a></li>
+								<li id="btn_admin"><a href="#">Crear administradores</a></li>
+								<li id="lista_Admin"><a href="#">Ver administradores</a></li>
+								<li id="btn_solicitudes"><a href="#" >Ver solicitudes</a></li>
+								<li id="btn_crear_usuarios"><a href="#" >Crear usuarios</a></li>
+								<li id="btn_asignar"><a href="#" >Asignar solicitudes</a></li>
+								<li id="btn_cerrar"><a href="#" >Salir</a></li>
 								
 							</ul>
 						</nav>

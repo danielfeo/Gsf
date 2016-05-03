@@ -1,7 +1,8 @@
 <?php
 
 
-include_once ('Usuario.controller.php');
+
+
 
 if ($_REQUEST['ruta'] == 'solicitud'){
 
@@ -55,7 +56,7 @@ $filePath = $randName . '.' . $ext;
 
 }
 
-
+include_once ('Usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -67,7 +68,7 @@ $filePath = $randName . '.' . $ext;
 
 if ($_REQUEST['ruta'] == 'listar_solicitudes'){
 
-  
+  include_once ('Usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -78,7 +79,7 @@ if ($_REQUEST['ruta'] == 'listar_solicitudes'){
 
 if ($_REQUEST['ruta'] == 'listar_paises'){
 
-  
+  include_once ('Usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -92,6 +93,7 @@ if ($_REQUEST['ruta'] == 'logear'){
 
  $documento=$_REQUEST['documento'];
  $clave=$_REQUEST['clave'];
+ include_once ('Usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -104,6 +106,8 @@ if ($_REQUEST['ruta'] == 'logear'){
 if ($_REQUEST['ruta'] == 'listar_ciudades'){
 
  $pais=$_REQUEST['pais'];
+
+ include_once ('Usuario.controller.php');
     
 
  $Usuario = new Usuario();
@@ -112,6 +116,32 @@ if ($_REQUEST['ruta'] == 'listar_ciudades'){
  echo $Usuario->listar_ciudad($pais);
 
 }
+
+
+if ($_REQUEST['ruta'] == 'registar_usuario_misional'){
+
+ $tipo_documento=$_REQUEST['tipo_documento'];
+ $documento=$_REQUEST['documento'];
+ $nombre=$_REQUEST['nombre'];
+ $apellidos=$_REQUEST['apellidos'];
+ $telefono_cel=$_REQUEST['telefono_cel'];
+ $tel_fijo=$_REQUEST['tel_fijo'];
+ $email=$_REQUEST['email'];
+ $pais=$_REQUEST['pais'];
+ $ciudad=$_REQUEST['ciudad'];
+ $direccion=$_REQUEST['direccion'];
+ $tipo=$_REQUEST['tipo'];
+
+include_once ('super.controller.php');
+
+ $Super = new Super();
+
+ $estado = $Super->registar_usuario_misional($tipo_documento,$documento,$nombre,$apellidos,$telefono_cel, $tel_fijo,$email,$pais,$ciudad,$direccion,$tipo);
+
+echo $estado;
+}
+
+
 
 if ($_REQUEST['ruta'] == 'registar_usuario'){
 
@@ -125,6 +155,8 @@ if ($_REQUEST['ruta'] == 'registar_usuario'){
  $pais=$_REQUEST['pais'];
  $ciudad=$_REQUEST['ciudad'];
  $direccion=$_REQUEST['direccion'];
+
+ include_once ('Usuario.controller.php');
 
 
  $Usuario = new Usuario();

@@ -3,33 +3,33 @@
 require('../modelo/bd.class.php'); 
 
 
-class Usuario extends Db
+class Super extends Db
 {
 
 					
 
 					private function contra(){
 
-									$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-									$cad = "";
-									for($i=0;$i<8;$i++) {
-									$cad .= substr($str,rand(0,62),1);
-									}
-									return $cad;
+					$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+					$cad = "";
+					for($i=0;$i<8;$i++) {
+					$cad .= substr($str,rand(0,62),1);
+					}
+					return $cad;
 
 					}
 					
 					public function insertar_solicitud($id_usuario,$ciudad,$descripcion,$filePath){
 
-									$conexion = $this->conexion();
+						$conexion = $this->conexion();
 
-									$retorna = '';
-									$consulta = "INSERT INTO
-									 `gestor_solicitudes`.`solicitud`
-									 (`id`,`dependencia`,`descripcion`,`fichero`,`id_usuario`,`estado`
-									 	,`id_asignado`,`fk_id_ciudad`,`fk_cod_pais`,fecha`)
-									  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'
-									  	$ciudad','CO','".date("Y-m-d")."');";
+						$retorna = '';
+						$consulta = "INSERT INTO
+						 `gestor_solicitudes`.`solicitud`
+						 (`id`,`dependencia`,`descripcion`,`fichero`,`id_usuario`,`estado`
+						 	,`id_asignado`,`fk_id_ciudad`,`fk_cod_pais`,fecha`)
+						  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'
+						  	$ciudad','CO','".date("Y-m-d")."');";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Solicitud tramitada correctamente";
@@ -39,7 +39,6 @@ class Usuario extends Db
 
 
 					}
-					
 					private function validar_estado($b){
 						if($b==0){
 						$r='images/espera.png';}
@@ -149,7 +148,7 @@ class Usuario extends Db
 					}
 
 
-					public function registrar_usuario($tipo_doc,$doc,$nom,$ape,$cel,$fij,$mail,$pais,$ciudad,$direccion)
+					public function registar_usuario_misional($tipo_doc,$doc,$nom,$ape,$cel,$fij,$mail,$pais,$ciudad,$direccion,$tipo)
 
 					{
 
@@ -178,7 +177,7 @@ class Usuario extends Db
 
 
  
-							   $consulta = "call sp_insertar_usuario('$tipo_doc','$doc','$nom','$ape','$cel','$fij','$pais','$ciudad','$direccion','$mail','$clave','8')";
+								$consulta = "call sp_insertar_usuario('$tipo_doc','$doc','$nom','$ape','$cel','$fij','$pais','$ciudad','$direccion','$mail','$clave','$tipo')";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Usuario Insertado";
@@ -187,7 +186,7 @@ class Usuario extends Db
 									}
 
 								
-							   return $retorna;
+							  return $retorna;
 
 					}
 

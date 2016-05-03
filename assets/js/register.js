@@ -24,16 +24,16 @@ $( document ).ready(function() {
     	var ciudad = $('#ciudad').val();
     	var direccion = $('#direccion').val();
 
-        if(tipo_documento==''){alertify.alert("debe escoger tipo documento");return false;}
-    	if(documento==''){alertify.alert("debe digitar el documento");return false;}
-    	if(nombre==''){alertify.alert("debe digitar los nombres");return false;}
-    	if(apellidos==''){alertify.alert("debe digitar los apellidos");return false;}
-    	if(telefono_cel==''){alertify.alert("debe digitar un telefono celular");return false;}
-    	if(tel_fijo==''){alertify.alert("debe digitar un telefono fijo");return false;}
-    	if(email==''){alertify.alert("debe digitar un email");return false;}
-    	if(pais==''){alertify.alert("debe escoger un pais");return false;}
-    	if(ciudad==''){alertify.alert("debe digitar un ciudad");return false;}
-    	if(direccion==''){alertify.alert("debe digitar un direccion");return false;}
+        if(tipo_documento==''){alertify.alert("Debe escoger tipo documento");return false;}
+    	if(documento==''){alertify.alert("Debe digitar el documento");return false;}
+    	if(nombre==''){alertify.alert("Debe digitar los nombres");return false;}
+    	if(apellidos==''){alertify.alert("Debe digitar los apellidos");return false;}
+    	if(telefono_cel==''){alertify.alert("Debe digitar un telefono celular");return false;}
+    	if(tel_fijo==''){alertify.alert("Debe digitar un telefono fijo");return false;}
+    	if(email==''){alertify.alert("Debe digitar un email");return false;}
+    	if(pais==''){alertify.alert("Debe escoger un pais");return false;}
+    	if(ciudad==''){alertify.alert("Debe digitar un ciudad");return false;}
+    	if(direccion==''){alertify.alert("Debe digitar un direccion");return false;}
 
     	 $.ajax(
 				{
