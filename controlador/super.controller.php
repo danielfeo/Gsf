@@ -96,6 +96,25 @@ class Super extends Db
 					 return $retorna;
 					}
 
+					public function editar_usuario_misional($id_usuario)
+					{
+ 								$retorna='';
+
+								$conexion = $this->conexion();
+
+							 	$consulta = "SELECT * FROM usuario WHERE (id = ".$id_usuario.");";
+
+							    $arreglo = array();
+                                      if ($resultado = $conexion->query($consulta)) {
+                                            while($row =mysqli_fetch_assoc($resultado))
+                                            {
+                                                $arreglo[] = $row;
+                                            }
+                                          $resultado->close();
+                                        }
+					 return $arreglo;
+					}
+
 					public function logear($doc,$clave){
 					
 					$retorna='';

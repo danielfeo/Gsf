@@ -68,6 +68,21 @@ include_once ('Usuario.controller.php');
 
 
 
+if ($_REQUEST['ruta'] == 'editar_usuario_misional'){
+
+	$id_usuario=$_REQUEST['id_usuario'];
+
+ include_once ('super.controller.php');
+
+ $super = new Super();
+  
+
+ echo json_encode($super->editar_usuario_misional($id_usuario));
+
+}//FIN METODO TRAER ADMINISTRADORES PARA EDICION
+
+
+
 if ($_REQUEST['ruta'] == 'listar_admin'){
 
   include_once ('super.controller.php');

@@ -32,49 +32,49 @@
             <div class="form-group">
                 <label>
                     <span>Numero de documento</span>
-                    <input type="text" name="documento" id="documento">
+                    <input class="form-control"  type="text" name="documento" id="documento">
                 </label>
             </div>
 
             <div class="form-group">
                 <label>
                     <span>Nombre</span>
-                    <input type="text" name="nombre" id="nombre">
+                    <input class="form-control"  type="text" name="nombre" id="nombre">
                 </label>
             </div>
 
              <div class="form-group">
                 <label>
                     <span>Apellidos</span>
-                    <input type="text" name="apellidos" id="apellidos">
+                    <input class="form-control"  type="text" name="apellidos" id="apellidos">
                 </label>
             </div>
 
             <div class="form-group">
                 <label>
                     <span>Telefono celular</span>
-                    <input type="text" name="telefono_cel" id="telefono_cel">
+                    <input class="form-control"  type="text" name="telefono_cel" id="telefono_cel">
                 </label>
             </div>
 
             <div class="form-group">
                 <label>
                     <span>Telefono Fijo</span>
-                    <input type="text" name="tel_fijo" id="tel_fijo">
+                    <input class="form-control"  type="text" name="tel_fijo" id="tel_fijo">
                 </label>
             </div>
 
             <div class="form-group">
                 <label>
                     <span>Email</span>
-                    <input type="email" name="email" id="email">
+                    <input class="form-control"  type="email" name="email" id="email">
                 </label>
             </div>
 
             <div class="form-group">
                 <label>
                     <span>Pais</span>
-                    <select name="pais" id="pais">
+                    <select class="form-control"  name="pais" id="pais">
                         <option>Selecciona....</option>
                        
                     </select>
@@ -84,7 +84,7 @@
             <div class="form-group">
                 <label>
                     <span>Ciudad</span>
-                    <select name="ciudad" id="ciudad">
+                    <select class="form-control"  name="ciudad" id="ciudad">
                         <option>Selecciona....</option>
                        
                     </select>
@@ -94,7 +94,7 @@
             <div class="form-group">
                 <label>
                     <span>Direccion</span>
-                    <input name="direccion" id="direccion"></textarea>
+                    <input class="form-control"  name="direccion" id="direccion"></textarea>
                 </label>
             </div>
             <div class="form-group">
@@ -137,5 +137,105 @@
             </div>
     
       </div>
+    </div>
 
-</div>
+
+
+    <div id="myModal" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Editar usuario</h4>
+          </div>
+          <div class="modal-body">
+            
+             <form class="form-basic">
+
+            <input type="hidden" name="editar_id" id="editar_id" value="">
+            
+
+           
+            <div class="form-group">
+                <label>
+                    <span>Nombre</span>
+                    <input class="form-control"  type="text" name="nombre" id="editar_nombre">
+                </label>
+            </div>
+
+             <div class="form-group">
+                <label>
+                    <span>Apellidos</span>
+                    <input class="form-control"  type="text" name="apellidos" id="editar_apellidos">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span>Telefono celular</span>
+                    <input class="form-control"  type="text" name="telefono_cel" id="editar_telefono_cel">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span>Telefono Fijo</span>
+                    <input class="form-control"  type="text" name="tel_fijo" id="editar_tel_fijo">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span>Email</span>
+                    <input class="form-control"  type="email" name="email" id="editar_email">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span>Direccion</span>
+                    <input class="form-control"  name="direccion" id="editar_direccion"></textarea>
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <span>Poceso</span>
+                    <select class="form-control"  name="tipo" id="editar_tipo">
+                        <option value="">...Seleccione un proceso</option>
+                        <option value="2">Atención a víctimas del delito y al ciudadano</option>
+                        <option value="3">Proteción y asistencia</option>
+                        <option value="4">Extinción del derecho de dominio</option>
+                        <option value="5">Investigación y judicialización</option>
+                        <option value="6">Justicia Transicional</option>
+                       
+
+
+                    </select>
+
+                </label>
+            </div>
+
+            <div class="form-group">
+               
+                <input class="form-control"  type="button" id="editar" name="editar" value="Editar" > 
+            
+            </div>
+
+            </form>
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+          
+
+       
+
+
+
+    
+    

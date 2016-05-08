@@ -33,9 +33,9 @@ $('#tabla_admin').show();
         success: function(formularioResultado)
          {
          $('#tabla_admin').html(formularioResultado);
-           table = $('#admin_table').DataTable( {
-                            paging: false
-                        } );
+           table = $('#admin_table').DataTable( { "sPaginationType": "full_numbers" , "language": {
+                    "url": "assets/js/Spanish.json"
+                }} ); 
          }      
         });
 
@@ -77,6 +77,89 @@ $('#tabla_admin').show();
          });    
 
     });
+
+
+
+
+ $('body').delegate('#editar','click',function(){
+
+                        var editar_id = $('#editar_id').val();
+                        var editar_apellidos = $('#editar_apellidos').val();
+                        var editar_nombre = $('#editar_nombre').val();
+                        var editar_tel_fijo = $('#editar_tel_fijo').val();
+                        var editar_telefono_cel = $('#editar_telefono_cel').val();
+                        var editar_direccion = $('#editar_direccion').val();
+                        var editar_email = $('#editar_email').val();
+                        var editar_tipo = $('#editar_tipo').val();
+
+                         var parametros = {
+                "ruta" : "alterar_usuario_misional",
+                "id_usuario" : id_usuario
+
+        };
+
+ });
+
+
+
+ $('body').delegate('#editar_admin','click',function(){
+    var id_usuario= $(this).data('id');
+   
+      var parametros = {
+                "ruta" : "editar_usuario_misional",
+                "id_usuario" : id_usuario
+
+        };
+
+
+
+            $.ajax({
+                data:  parametros,
+                url:   'controlador/rutas.php',
+                type:  'post',
+                success:  function (data) {
+
+                        var json_obj = $.parseJSON(data);
+
+                         for (var i in json_obj)
+                          {
+
+
+                            
+                            var b = json_obj[i].id ;
+                            var c = json_obj[i].nombre ;
+                            var d = json_obj[i].apellidos ;
+                            var e = json_obj[i].telefono_celular ;
+                            var f = json_obj[i].telefono_fijo ;
+                            var g = json_obj[i].direccion ;
+                            var h = json_obj[i].mail ;
+                            var a = json_obj[i].rol ;
+                                                    
+
+                          }
+                              //$('#TX_REPRESENTANTE').val(data.V_NOMBRE_REPRESENTANTE);
+                             
+
+                                     //end if
+                       
+                        $('#editar_id').val(b);
+                        $('#editar_apellidos').val(c);
+                        $('#editar_nombre').val(d);
+                        $('#editar_tel_fijo').val(e);
+                        $('#editar_telefono_cel').val(f);
+                        $('#editar_direccion').val(g);
+                        $('#editar_email').val(h);
+                        $('#editar_tipo').val(a);
+                }
+        });
+
+
+
+     $("#myModal").modal();
+   });
+
+
+
 
 $('#btn_cerrar').click(function(){
 
