@@ -81,6 +81,27 @@ if ($_REQUEST['ruta'] == 'editar_usuario_misional'){
 
 }//FIN METODO TRAER ADMINISTRADORES PARA EDICION
 
+if ($_REQUEST['ruta'] == 'alterar_usuario_misional'){
+
+					$editar_id = $_REQUEST['editar_id'];
+                    $editar_apellidos = $_REQUEST['editar_apellidos'];
+                    $editar_nombre = $_REQUEST['editar_nombre'];
+                    $editar_tel_fijo = $_REQUEST['editar_tel_fijo'];
+                    $editar_telefono_cel = $_REQUEST['editar_telefono_cel'];
+                    $editar_direccion = $_REQUEST['editar_direccion'];
+                    $editar_email = $_REQUEST['editar_email'];
+                    $editar_tipo = $_REQUEST['editar_tipo'];
+
+ include_once ('super.controller.php');
+
+ $super = new Super();
+ 
+
+ echo $super->alterar_usuario_misional($editar_id,$editar_apellidos,$editar_nombre,$editar_tel_fijo,$editar_telefono_cel,$editar_direccion,$editar_email,$editar_tipo);
+
+}//FIN METODO TRAER ADMINISTRADORES PARA EDICION
+
+
 
 
 if ($_REQUEST['ruta'] == 'listar_admin'){

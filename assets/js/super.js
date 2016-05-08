@@ -93,10 +93,33 @@ $('#tabla_admin').show();
                         var editar_tipo = $('#editar_tipo').val();
 
                          var parametros = {
-                "ruta" : "alterar_usuario_misional",
-                "id_usuario" : id_usuario
+                
+                    "ruta" : "alterar_usuario_misional",
 
-        };
+                    "editar_id": editar_id ,
+                    "editar_apellidos": editar_apellidos ,
+                    "editar_nombre": editar_nombre ,
+                    "editar_tel_fijo": editar_tel_fijo ,
+                    "editar_telefono_cel": editar_telefono_cel ,
+                    "editar_direccion": editar_direccion ,
+                    "editar_email": editar_email ,
+                    "editar_tipo": editar_tipo 
+                };
+                $.ajax({
+                data:  parametros,
+                url:   'controlador/rutas.php',
+                type:  'post',
+                success:  function (response) {
+                        alertify.alert(response, function(){
+                                    alertify.message('OK');
+                                  });
+                       $('#myModal').modal('toggle');
+                      $('#lista_Admin').click();
+                }
+        });
+
+                
+
 
  });
 
@@ -143,8 +166,8 @@ $('#tabla_admin').show();
                                      //end if
                        
                         $('#editar_id').val(b);
-                        $('#editar_apellidos').val(c);
-                        $('#editar_nombre').val(d);
+                        $('#editar_apellidos').val(d);
+                        $('#editar_nombre').val(c);
                         $('#editar_tel_fijo').val(e);
                         $('#editar_telefono_cel').val(f);
                         $('#editar_direccion').val(g);

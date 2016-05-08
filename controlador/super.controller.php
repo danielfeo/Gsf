@@ -78,7 +78,40 @@ class Super extends Db
 					}
 
 
-	
+					public function alterar_usuario_misional($editar_id,$editar_apellidos,$editar_nombre,$editar_tel_fijo,$editar_telefono_cel,$editar_direccion,$editar_email,$editar_tipo){
+
+						
+ 								$retorna='';
+
+								$conexion = $this->conexion();
+
+								$consulta = "
+								UPDATE usuario
+								set
+								`nombre` = '".$editar_nombre."',
+								`apellidos` = '".$editar_apellidos."',
+								`telefono_celular` = '".$editar_tel_fijo."',
+								`telefono_fijo` = '".$editar_telefono_cel."',
+								`direccion` = '".$editar_direccion."',
+								`mail` = '".$editar_email."',
+								`rol` = '".$editar_tipo."'
+							 	 WHERE `id`='".$editar_id."'; ";
+ 								
+									if ($conexion->query($consulta) === TRUE) {
+									    $retorna .= "Usuario actualizado";
+									} else {
+									    $retorna .= "Error el usuario no fue actualzado: " . $conn->error;
+									}
+
+									$conexion->close();
+
+					
+							 	 return $retorna;
+					
+					}
+
+
+
 					public function listar_pais()
 					{
  								$retorna='';
