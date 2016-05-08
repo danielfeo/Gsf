@@ -66,6 +66,20 @@ include_once ('Usuario.controller.php');
 }//FIN METODO SOLICITUD
 
 
+
+
+if ($_REQUEST['ruta'] == 'listar_admin'){
+
+  include_once ('super.controller.php');
+
+ $super = new Super();
+  
+
+ echo $super->listar_admin();
+
+}//FIN METODO LISTAR ADMINISTRADORES
+
+
 if ($_REQUEST['ruta'] == 'listar_solicitudes'){
 
   include_once ('Usuario.controller.php');

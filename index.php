@@ -11,7 +11,14 @@
 
    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
 
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
  
 
@@ -25,8 +32,8 @@
 
 				<!-- Header -->
 					<header id="header">
-						<img class="img_logo" src="images/logo_fiscalia_azul.png" /><h1><a href="#">GESTOR SOLICITUDES FISCALIA</a></h1>
-						<nav class="links">
+						<img class="img_logo" src="images/logo_fiscalia_azul.png" /><p><a href="#">GESTOR SOLICITUDES FISCALIA</a></p>
+						<nav class="links"  class="navbar navbar-defaultDSS">
 							<ul>
 								<li id="btn_registro"><a href="#" >Registro</a></li>
 								<li id="btn_login"><a href="#" >Iniciar sesion</a></li>

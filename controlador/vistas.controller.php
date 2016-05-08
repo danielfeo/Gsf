@@ -2,7 +2,7 @@
 
 if ($_POST['vista'] == '1') 
 { ?>
-          <div id="DIV_CONTENEDOR" class="panel panel-default">
+          <div id="DIV_CONTENEDOR" class="">
                <?php
                   include_once ("../vistas/register.php");
                 ?>
@@ -11,7 +11,7 @@ if ($_POST['vista'] == '1')
 }
 if ($_POST['vista'] == '2') 
 { ?>
-          <div id="DIV_CONTENEDOR" class="panel panel-default">
+          <div id="DIV_CONTENEDOR" class="">
                <?php
                   include_once ("../vistas/login.php");
                 ?>
@@ -20,7 +20,7 @@ if ($_POST['vista'] == '2')
 }
 if ($_POST['vista'] == '3') 
 { ?>
-          <div id="DIV_CONTENEDOR" class="panel panel-default">
+          <div id="DIV_CONTENEDOR" class="">
                <?php
                   include_once ("../vistas/user.php");
                 ?>
@@ -29,7 +29,7 @@ if ($_POST['vista'] == '3')
 }
 if ($_POST['vista'] == '4') 
 { ?>
-          <div id="DIV_CONTENEDOR" class="panel panel-default">
+          <div id="DIV_CONTENEDOR" class="">
                <?php
                   include_once ("../vistas/admin.php");
                 ?>
@@ -38,7 +38,7 @@ if ($_POST['vista'] == '4')
 }
 if ($_POST['vista'] == '5') 
 { ?>
-          <div id="DIV_CONTENEDOR" class="panel panel-default">
+          <div id="DIV_CONTENEDOR" class="">
                <?php
                   include_once ("../vistas/super.php");
                 ?>

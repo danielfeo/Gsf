@@ -1,32 +1,32 @@
 
 <script src="assets/js/login.js"></script>
 <div class="container-fluid">
-	    <form class="form-basic">
+	    <form class="form-basic" id="form_login" method="post">
 
             <div class="form-title-row">
                 <h1>Formulario Inicio de sesion</h1>
             </div>
 
             
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Cedula</span>
-                    <input type="text" name="documento" id="documento">
+                    <input  class="form-control" type="text" name="documento" id="documento">
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Clave</span>
-                    <input type="password" name="clave" id="clave">
+                    <input  class="form-control" type="password" name="clave" id="clave">
                 </label>
             </div>
 
            
 
-            <div class="form-row">
+            <div class="form-group">
                
-                <input type="button" id="logear" name="logear" value="logear"> 
+                <input  class="form-control" type="submit" id="logear" name="logear" value="logear"> 
             
             </div>
 

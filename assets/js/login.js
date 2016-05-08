@@ -12,7 +12,7 @@ $( document ).ready(function() {
          }      
         });
 }
-    $('#logear').click(function(){
+    $('#form_login').submit(function(e){
     	
        
     	var documento = $('#documento').val();
@@ -56,7 +56,7 @@ $( document ).ready(function() {
              }
          }		
 		});
-    	
+    	e.preventDefault(); 
 
     });
 

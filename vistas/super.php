@@ -5,13 +5,19 @@
   </div>
 <div class="container-fluid">
 
+    <div class="panel panel-default">
+    
+    <div class="panel-heading">Panel Creación de gestores misionales</div>
+
+    <div class="panel-body">
+
     <form class="form-basic" id="formInscripcion_misionales" name="formInscripcion_misionales">
 
             <div class="form-title-row">
                 <h1>Formulario de registro usuarios procesos misionales</h1>
             </div>
             <input type="hidden" name="ruta" id="ruta" value="registar_usuario_misional">
-             <div class="form-row">
+             <div class="form-group">
                 <label>
                     <span>Tipo de documento</span>
                     <select name="tipo_documento" id="tipo_documento">
@@ -23,49 +29,49 @@
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Numero de documento</span>
                     <input type="text" name="documento" id="documento">
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Nombre</span>
                     <input type="text" name="nombre" id="nombre">
                 </label>
             </div>
 
-             <div class="form-row">
+             <div class="form-group">
                 <label>
                     <span>Apellidos</span>
                     <input type="text" name="apellidos" id="apellidos">
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Telefono celular</span>
                     <input type="text" name="telefono_cel" id="telefono_cel">
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Telefono Fijo</span>
                     <input type="text" name="tel_fijo" id="tel_fijo">
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Email</span>
                     <input type="email" name="email" id="email">
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Pais</span>
                     <select name="pais" id="pais">
@@ -75,7 +81,7 @@
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Ciudad</span>
                     <select name="ciudad" id="ciudad">
@@ -85,13 +91,13 @@
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Direccion</span>
                     <input name="direccion" id="direccion"></textarea>
                 </label>
             </div>
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Poceso</span>
                     <select name="tipo" id="tipo">
@@ -109,7 +115,7 @@
                 </label>
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                
                 <input type="button" id="registrar" name="registrar" value="enviar"> 
             
@@ -117,9 +123,19 @@
 
                        
         </form>
-        <div id="tabla_admin">
-
 
         </div>
+    
+    </div>
+     <div class="panel panel-default">
+            <div class="panel-heading">Panel edicion de gestores misionales</div>
+            <div class="panel-body">
+                    <div id="tabla_admin">
+                  
+                    </div>
+                
+            </div>
+    
+      </div>
 
 </div>

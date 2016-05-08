@@ -19,35 +19,8 @@ class Super extends Db
 
 					}
 					
-					public function insertar_solicitud($id_usuario,$ciudad,$descripcion,$filePath){
-
-						$conexion = $this->conexion();
-
-						$retorna = '';
-						$consulta = "INSERT INTO
-						 `gestor_solicitudes`.`solicitud`
-						 (`id`,`dependencia`,`descripcion`,`fichero`,`id_usuario`,`estado`
-						 	,`id_asignado`,`fk_id_ciudad`,`fk_cod_pais`,fecha`)
-						  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'
-						  	$ciudad','CO','".date("Y-m-d")."');";
- 								
-									if ($conexion->query($consulta) === TRUE) {
-									    $retorna .= "Solicitud tramitada correctamente";
-									} else {
-									    $retorna .= "Solicitud no tramitada" . $conn->error;
-									}
-
-
-					}
-					private function validar_estado($b){
-						if($b==0){
-						$r='images/espera.png';}
-						if($b==1){
-						$r='images/espera.png';
-						}
-						return $r;
-					}
-					public function listar_solicitudes(){
+			
+					public function listar_admin(){
 
 						$retorna='';
 
@@ -57,27 +30,44 @@ class Super extends Db
 
 						$id_usuario = $_SESSION['id'];
 
-					 	$consulta = "call sp_taer_solicitudes($id_usuario);";
-						$retorna .= '<table id="listTable" border="1"  cellpadding="5">
+					 	$consulta = "select * from usuario where rol BETWEEN 2 and 7 ";
+						$retorna .= '<table id="admin_table" border="1"  cellpadding="5">
 					        <thead>
 					            <tr>
-					                <th>Descripción</th>
 					                <th>Documento</th>
-					                <th>Estado</th>
-					                <th>Solicitado en</th>
+					                <th>Nombre</th>
+					                <th>Apellidos</th>
+					                <th>Mail</th>
+					                <th>Clave</th>
+					                <th>Proceso misional</th>
+					                <th>Editar</th>
+					                <th>Inhabilitar</th>
+
 
 					            </tr>
 					        </thead>
-				            <tbody><tr>';
+				            <tbody>';
 						    
 						    if ($resultado = $conexion->query($consulta)) {
 						    while ($fila = $resultado->fetch_row()) {
 
-						         $retorna .= '<td> '.$fila[2].' </td>
-						         <td><a target="_blank" href="documentos/'.$fila[3].'">
-						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>
-						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td><td>'.$fila[9].'</td>';
-						  		  $retorna .= '</tr>';
+						 if ($fila[13] ==  2){ $misional= "Atención a víctimas del delito y al ciudadano ";  }
+                         if ($fila[13] ==  3){ $misional= "Proteción y asistencia ";  }
+                         if ($fila[13] ==  4){ $misional= "Extinción del derecho de dominio ";  }
+                         if ($fila[13] ==  5){ $misional= "Investigación y judicialización ";  }
+                         if ($fila[13] ==  6){ $misional= "Justicia Transicional ";  }
+
+						         $retorna .= '<tr>
+						         <td> '.$fila[2].' </td>
+						         <td> '.$fila[3].' </td>
+						         <td> '.$fila[4].' </td>
+						         <td> '.$fila[11].' </td>
+						         <td> '.$fila[12].' </td>
+						         <td> '.$misional.' </td>
+						         <td> <a class="btn btn-primary" id="editar_admin" data-id="'.$fila[0].'">Editar</a></td>
+						         <td> <a class="btn btn-danger" id="Inhabilitar_admin" data-id="'.$fila[0].'">Inhabilitar</a></td>
+						         </tr>';
+						         
 						    }
 					    $resultado->close();
 						}
@@ -86,6 +76,8 @@ class Super extends Db
 			 			return $retorna;
 
 					}
+
+
 	
 					public function listar_pais()
 					{

@@ -9,16 +9,23 @@ $( document ).ready(function() {
 	$('#btn_solicitud').click(function(){
 
     $('#formInscripcion').show();
-     $('#tabla_solicitudes').hide();
-tabla_solicitudes
+     $('#cont_tabla_solicitudes').hide();
+
+
+
+
 	});
 
+
+    
 $('#btn_cerrar').click(function(){
 
   location.reload(); 
 
 
 	});
+
+
 
 	$('#btn_solicitudes').click(function(){
 

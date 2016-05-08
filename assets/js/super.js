@@ -8,13 +8,44 @@ $('#btn_login').hide();
 $('#loading').hide();
 $('#btn_cerrar').show();
 $('#lista_Admin').show();
+$('#tabla_admin').hide();
 
 $('#btn_admin').click(function(){
 
 $('#formInscripcion_misionales').show();
 
+$('#tabla_admin').hide();
+
 });
 
+$('#lista_Admin').click(function(){
+
+$('#formInscripcion_misionales').hide();
+
+$('#tabla_admin').show();
+
+ $.ajax(
+        {
+        url: 'controlador/rutas.php',
+        type: 'POST',
+        dataType: 'html',
+        data: {ruta: 'listar_admin'},
+        success: function(formularioResultado)
+         {
+         $('#tabla_admin').html(formularioResultado);
+           table = $('#admin_table').DataTable( {
+                            paging: false
+                        } );
+         }      
+        });
+
+
+
+
+
+});
+
+ 
   $.ajax(
         {
         url: 'controlador/rutas.php',

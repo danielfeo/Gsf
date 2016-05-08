@@ -5,14 +5,20 @@
   </div>
 <div class="container-fluid">
 
+    <div class="panel panel-default">
+    
+    <div class="panel-heading">Panel Creación Solicitudes</div>
+
+    <div class="panel-body">
+
 	<form class="form-basic" id="formInscripcion" name="formInscripcion">
 
-			<input type="hidden" name="ruta" id="ruta" value="solicitud">
+			<input  class="form-control" type="hidden" name="ruta" id="ruta" value="solicitud">
             <div class="form-title-row">
                 <h1>Formulario de peticiones y quejas</h1>
             </div>
 
-             <div class="form-row">
+             <div class="form-group">
                 <label>
                     <span>Ciudad de los hechos</span>
                     <select name="ciudad" id="ciudad">
@@ -23,23 +29,27 @@
             </div>
 
            
-            <div class="form-row">
+            <div class="form-group">
                 <label>
                     <span>Descripcion</span>
                     <textarea name="descripcion" id="descripcion"></textarea>
                 </label>
             </div>
-             <div class="form-row">
-                <label>
-                    <span>Selecciona archivo con todos los documentos en pdf</span>
-                    <input type="file" name="file1" id="file1"></textarea>
-                </label>
+              <div class="panel panel-default">
+                
+                     <div class="panel-heading">Selecciona archivo con todos los documentos en pdf</div>
+                
+              <div class="panel-body">
+                    <input  type="file" name="file1" id="file1">
+
+            
+            </div>
                 
             </div>
 
-            <div class="form-row">
+            <div class="form-group">
                
-                <input type="button" id="registrar" name="registrar" value="enviar"> 
+                <input  class="form-control"  type="button" id="registrar" name="registrar" value="enviar"> 
             
             </div>
 
@@ -48,9 +58,19 @@
                        
         </form>
 
+        </div>
+        </div>
+        
+        <div class="panel panel-default">
+    
+    <div class="panel-heading">Panel Solicitudes</div>
+
+    <div class="panel-body">
 
         <div id="cont_tabla_solicitudes">
 
         </div>
+    </div>
+    </div>
 
 </div>
