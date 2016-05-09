@@ -77,7 +77,7 @@ include_once ('asignador.controller.php');
 
  echo $super->listar_solicitud_asignador();
 
-}//FIN METODO HABILITAR USUARIOS
+}//FIN METODO ASIGNA SOLICITUDES
 
 
 if ($_REQUEST['ruta'] == 'habilitar_usuario_misional'){
@@ -190,6 +190,21 @@ if ($_REQUEST['ruta'] == 'logear'){
 
 }
 
+
+if ($_REQUEST['ruta'] == 'asignar_solicitud_misional'){
+
+ $id=$_REQUEST['id'];
+ $tipo=$_REQUEST['tipo'];
+
+ include_once ('asignador.controller.php');
+    
+
+ $Asignador = new Asignador();
+  
+
+ echo $Asignador->asignar_solicitud_misional($id,$tipo);
+
+}
 
 if ($_REQUEST['ruta'] == 'listar_ciudades'){
 

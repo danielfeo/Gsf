@@ -15,6 +15,36 @@ class Asignador extends Db
 						return $r;
 					}
 
+		
+
+
+	public function asignar_solicitud_misional($id,$tipo){
+
+						
+ 								$retorna='';
+
+								$conexion = $this->conexion();
+
+								$consulta = "
+								UPDATE solicitud
+								set
+								`estado` = 1 ,
+								`id_asignado` = $tipo 
+								 WHERE `id`= $id ; ";
+ 								
+									if ($conexion->query($consulta) === TRUE) {
+									    $retorna .= "Solicitud asignada";
+									} else {
+									    $retorna .= "Error solicitud no asignada: " . $conexion->error;
+									}
+
+									$conexion->close();
+
+					
+							 	 return $retorna;
+					
+					}
+
 	public function listar_solicitud_asignador(){
 
 						$retorna='';
@@ -33,7 +63,7 @@ class Asignador extends Db
 					                <th>Documento</th>
 					                <th>Estado</th>
 					                <th>Solicitado en</th>
-					                <th>Selecciona area misional</th>
+					                <th>Asignar</th>
 
 					            </tr>
 					        </thead>
@@ -46,18 +76,9 @@ class Asignador extends Db
 						         <td><a target="_blank" href="documentos/'.$fila[3].'">
 						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>
 						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td><td>'.$fila[9].'</td>';
-						         $retorna . = '
-									<td>
 
-									<option value="">...Seleccione un proceso</option>
-			                        <option value="2">Atención a víctimas del delito y al ciudadano</option>
-			                        <option value="3">Proteción y asistencia</option>
-			                        <option value="4">Extinción del derecho de dominio</option>
-			                        <option value="5">Investigación y judicialización</option>
-			                        <option value="6">Justicia Transicional</option>
-			                        <option value="9">Asignador de solicitudes</option>
-
-			                        </td>
+						         $retorna .= '
+									<td> <a class="btn btn-primary" id="asignar_btn" data-id="'.$fila[0].'">Asignar</a></td>
 
 						         ';
 						  		  $retorna .= '</tr>';

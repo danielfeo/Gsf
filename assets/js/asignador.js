@@ -12,12 +12,7 @@ $('#asignacion').hide();
 $('#btn_asignar').show();
 	$('#btn_asignar').click(function(){
 
-	$('#asignacion').show();
-
-	});
-
-
- 	$.ajax(
+	$.ajax(
         {
         url: 'controlador/rutas.php',
         type: 'POST',
@@ -31,6 +26,51 @@ $('#btn_asignar').show();
                 }} ); 
          }      
      });
+
+	$('#asignacion').show();
+
+	});
+
+myModal
+  $('body').delegate('#asignar_btn','click',function(){
+
+
+     var id= $(this).data('id');
+
+     $('#id').val(id);
+     $("#myModal").modal();
+
+ });
+
+
+   $('body').delegate('#asigar_misional','click',function(){
+
+     var id = $('#id').val();
+     var tipo = $('#tipo').val();
+     
+
+     $.ajax(
+        {
+        url: 'controlador/rutas.php',
+        type: 'POST',
+        dataType: 'html',
+        data: {ruta: 'asignar_solicitud_misional', id: id,tipo: tipo},
+        success: function(data)
+         {
+
+
+         	alertify.alert(data);
+
+         	 $('#myModal').modal('toggle');
+
+
+         	$("#btn_asignar").click();
+        
+         }      
+     });
+
+     
+ });
 
 $('#btn_cerrar').click(function(){
 
