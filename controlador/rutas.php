@@ -66,7 +66,45 @@ include_once ('Usuario.controller.php');
 }//FIN METODO SOLICITUD
 
 
+if ($_REQUEST['ruta'] == 'listar_solicitud_asignador'){
 
+
+
+include_once ('asignador.controller.php');
+
+ $super = new Asignador();
+  
+
+ echo $super->listar_solicitud_asignador();
+
+}//FIN METODO HABILITAR USUARIOS
+
+
+if ($_REQUEST['ruta'] == 'habilitar_usuario_misional'){
+
+$id_usuario=$_REQUEST['id'];
+
+include_once ('super.controller.php');
+
+ $super = new Super();
+  
+
+ echo $super->habilitar_usuario_misional($id_usuario);
+
+}//FIN METODO HABILITAR USUARIOS
+
+if ($_REQUEST['ruta'] == 'inhabilitar_usuario_misional'){
+
+$id_usuario=$_REQUEST['id'];
+
+include_once ('super.controller.php');
+
+ $super = new Super();
+  
+
+ echo $super->inhabilitar_usuario_misional($id_usuario);
+
+}//FIN METODO INHABILITAR USUARIOS
 
 if ($_REQUEST['ruta'] == 'editar_usuario_misional'){
 

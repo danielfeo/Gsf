@@ -80,6 +80,66 @@ $('#tabla_admin').show();
 
 
 
+ $('body').delegate('#Habilitar_admin','click',function(){
+
+
+     var id= $(this).data('id');
+                       
+
+                         var parametros = {
+                
+                            "ruta" : "habilitar_usuario_misional",
+                            "id": id ,
+                                                     };
+
+                $.ajax({
+                data:  parametros,
+                url:   'controlador/rutas.php',
+                type:  'post',
+                success:  function (response) {
+                        alertify.alert(response, function(){
+                                    alertify.message('OK');
+                                  });
+                       
+                       $('#lista_Admin').click();
+                }
+                });
+
+
+
+
+ });
+
+ $('body').delegate('#Inhabilitar_admin','click',function(){
+
+
+     var id= $(this).data('id');
+                       
+
+                         var parametros = {
+                
+                            "ruta" : "inhabilitar_usuario_misional",
+                            "id": id ,
+                                                     };
+
+                $.ajax({
+                data:  parametros,
+                url:   'controlador/rutas.php',
+                type:  'post',
+                success:  function (response) {
+                        alertify.alert(response, function(){
+                                    alertify.message('OK');
+                                  });
+                       
+                       $('#lista_Admin').click();
+                }
+                });
+
+
+
+
+ });
+
 
  $('body').delegate('#editar','click',function(){
 
@@ -94,17 +154,17 @@ $('#tabla_admin').show();
 
                          var parametros = {
                 
-                    "ruta" : "alterar_usuario_misional",
+                            "ruta" : "alterar_usuario_misional",
+                            "editar_id": editar_id ,
+                            "editar_apellidos": editar_apellidos ,
+                            "editar_nombre": editar_nombre ,
+                            "editar_tel_fijo": editar_tel_fijo ,
+                            "editar_telefono_cel": editar_telefono_cel ,
+                            "editar_direccion": editar_direccion ,
+                            "editar_email": editar_email ,
+                            "editar_tipo": editar_tipo 
+                         };
 
-                    "editar_id": editar_id ,
-                    "editar_apellidos": editar_apellidos ,
-                    "editar_nombre": editar_nombre ,
-                    "editar_tel_fijo": editar_tel_fijo ,
-                    "editar_telefono_cel": editar_telefono_cel ,
-                    "editar_direccion": editar_direccion ,
-                    "editar_email": editar_email ,
-                    "editar_tipo": editar_tipo 
-                };
                 $.ajax({
                 data:  parametros,
                 url:   'controlador/rutas.php',
@@ -114,9 +174,9 @@ $('#tabla_admin').show();
                                     alertify.message('OK');
                                   });
                        $('#myModal').modal('toggle');
-                      $('#lista_Admin').click();
+                       $('#lista_Admin').click();
                 }
-        });
+                });
 
                 
 
@@ -226,7 +286,7 @@ $("#formInscripcion_misionales").submit(function(e)
         if(pais==''){alertify.alert("Debe escoger un pais");return false;}
         if(ciudad==''){alertify.alert("Debe digitar un ciudad");return false;}
         if(direccion==''){alertify.alert("Debe digitar un direccion");return false;}
-        if(tipo==''){alertify.alert("Debe digitar un direccion");return false;}
+        if(tipo==''){alertify.alert("Debe seleccionar un area misional");return false;}
 
     $('#loading').show();
     var formObj = $(this);

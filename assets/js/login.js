@@ -36,6 +36,11 @@ $( document ).ready(function() {
         success: function(res)
          {
 
+            if(res==0){
+            alertify.alert('Su usuario ha sido deshabilitado');
+            
+             }
+
             if(res==8){
             alertify.alert('Bienvenido usuario');
              $( "#DIV_CONTENEDOR" ).remove();
@@ -53,6 +58,12 @@ $( document ).ready(function() {
             $( "#DIV_CONTENEDOR" ).remove();
 
             controlAjaxVista(4);
+             }
+            if(res==9){
+            alertify.alert('Asigador de solicitudes');
+            $( "#DIV_CONTENEDOR" ).remove();
+
+            controlAjaxVista(6);
              }
          }		
 		});

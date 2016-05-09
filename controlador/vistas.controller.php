@@ -46,5 +46,15 @@ if ($_POST['vista'] == '5')
         <?php 
 }
 
+if ($_POST['vista'] == '6') 
+{ ?>
+          <div id="DIV_CONTENEDOR" class="">
+               <?php
+                  include_once ("../vistas/asignador.php");
+                ?>
+          </div>
+        <?php 
+}
+
 
         ?>
