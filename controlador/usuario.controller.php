@@ -40,11 +40,14 @@ class Usuario extends Db
 
 					}
 					
-					private function validar_estado($b){
+						private function validar_estado($b){
 						if($b==0){
 						$r='images/espera.png';}
 						if($b==1){
-						$r='images/espera.png';
+						$r='images/asignado.png';
+						}
+						if($b==2){
+						$r='images/solucion.png';
 						}
 						return $r;
 					}

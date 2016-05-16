@@ -12,22 +12,18 @@
 
 <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
 
-   <!-- Latest compiled and minified CSS -->
+
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
 
-<!-- Optional theme -->
+<!-- tema de bootstrap bootswatch -->
 <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" >
-
-<!-- Latest compiled and minified JavaScript -->
-
- 
-
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	
 	</head>
 	<body>
 
-		<!-- Wrapper -->
+		<!-- Contenedor principal cabecera -->
 			<div id="wrapper">
 
 				<!-- Header -->
@@ -43,6 +39,8 @@
 								<li id="btn_solicitudes"><a href="#" >Ver solicitudes</a></li>
 								<li id="btn_crear_usuarios"><a href="#" >Crear usuarios</a></li>
 								<li id="btn_asignar"><a href="#" >Asignar solicitudes</a></li>
+								<li id="btn_responder_solicitudes"><a href="#" >Responder solicitudes</a></li>
+								
 								<li id="btn_cerrar"><a href="#" >Salir</a></li>
 								
 							</ul>
@@ -65,14 +63,14 @@
 				<!-- Menu -->
 					<section id="menu">
 
-						<!-- Search -->
+						<!-- Busqueda -->
 							<section>
 								<form class="search" method="get" action="#">
 									<input type="text" name="query" placeholder="Codigo solicitud" />
 								</form>
 							</section>
 
-						<!-- Links -->
+						<!-- Links de acceso -->
 							<section>
 								<ul class="links">
 									<li>
@@ -97,7 +95,7 @@
 								</ul>
 							</section>
 
-						<!-- Actions -->
+						<!-- Login -->
 							<section>
 								<ul class="actions vertical">
 									<li><a id="btn_login" class="button big fit">Iniciar sesion</a></li>
@@ -106,14 +104,13 @@
 
 					</section>
 
-				<!-- Main -->
+				<!-- Contenedor principal Vistas -->
 					<div id="main">
 
-						<!-- Post -->
-							
+										
 					</div>
 
-		<!-- Scripts -->
+		
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>

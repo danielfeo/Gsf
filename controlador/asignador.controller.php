@@ -10,7 +10,10 @@ class Asignador extends Db
 						if($b==0){
 						$r='images/espera.png';}
 						if($b==1){
-						$r='images/espera.png';
+						$r='images/asignado.png';
+						}
+						if($b==2){
+						$r='images/solucion.png';
 						}
 						return $r;
 					}
