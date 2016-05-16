@@ -25,18 +25,18 @@ class Usuario extends Db
 
 									$retorna = '';
 									$consulta = "INSERT INTO
-									 `gestor_solicitudes`.`solicitud`
-									 (`id`,`dependencia`,`descripcion`,`fichero`,`id_usuario`,`estado`
-									 	,`id_asignado`,`fk_id_ciudad`,`fk_cod_pais`,fecha`)
+									 gestor_solicitudes.solicitud
+									 (id,dependencia,descripcion,fichero,id_usuario,estado
+									 	,id_asignado,fk_id_ciudad,fk_cod_pais,fecha)
 									  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'
 									  	$ciudad','CO','".date("Y-m-d")."');";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Solicitud tramitada correctamente";
 									} else {
-									    $retorna .= "Solicitud no tramitada" . $conn->error;
+									    $retorna .= "Solicitud no tramitada" . $conexion->error;
 									}
-
+									return $retorna;
 
 					}
 					
