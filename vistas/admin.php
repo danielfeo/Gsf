@@ -43,10 +43,7 @@
                   					
                   				<label  for="tipo"> Responder  Solicitud </label>
           						      
-                          <textarea lass="form-control"  id="texto_respuesta" name="texto_respuesta">
-                            
-
-                          </textarea>  
+                          <textarea lass="form-control"  id="texto_respuesta" name="texto_respuesta"></textarea>  
 
                         </div>
 
@@ -65,7 +62,7 @@
 
 			                   <div class="form-group">
                 
-						            <input class="form-control"  type="button" id="responder_solicitud" name="responder_solicitud" value="Resopnder" > 
+						            <input class="form-control"  type="button" id="responder_solicitud" name="responder_solicitud" value="REs" > 
 						            
 						            </div>
 

@@ -1,5 +1,67 @@
 <?php
 
+if ($_REQUEST['ruta'] == 'respuesta'){
+
+session_start();
+ $descripcion=$_REQUEST['texto_respuesta'];
+ $id_solicitud=$_REQUEST['id'];
+
+ $filePath='';
+
+if(isset($_FILES['fichero'])){			
+
+
+$uploadDir = '../documentos/';
+$fileName = $_FILES['fichero']['name'];
+$tmpName = $_FILES['fichero']['tmp_name'];
+$fileSize = $_FILES['fichero']['size'];
+$fileType = $_FILES['fichero']['type'];
+
+$filePath = $uploadDir . $fileName;
+
+	if ($fileSize >10000000)
+	{
+		echo 'El archivo no debe superar los 10 MB';
+		 exit();	
+	}
+
+	if (!($fileType =="text/pdf" || $fileType =="application/pdf")){
+	echo 'El archivo debe ser formato pdf';
+			 exit();
+			 }
+
+
+$ext = substr(strrchr($fileName, "."), 1);
+
+
+
+$randName = md5(rand() * time());
+
+
+
+$filePath = $uploadDir . $randName . '.' . $ext;
+
+$result = move_uploaded_file($tmpName, $filePath);
+
+if (!$result) {
+	echo 'No se subio el archivo';
+    exit();
+}
+
+$filePath = $randName . '.' . $ext;
+
+}
+
+include_once ('admin.controller.php');
+
+ $Admin = new Admin();
+  
+
+ echo $Admin->respuesta_solicitud($id_solicitud,$descripcion,$filePath);
+
+}//FIN METODO SOLICITUD
+
+
 
 
 

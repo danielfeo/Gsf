@@ -17,6 +17,45 @@ class Admin extends Db
 						return $r;
 					}
 
+
+					public function respuesta_solicitud($id_solicitud,$descripcion,$filePath){
+
+						$retorna='';
+
+								$conexion = $this->conexion();
+
+								
+
+								$id_usuario = $_SESSION['id'];
+
+								$consulta = "
+								UPDATE solicitud
+								set
+								
+								fecha_respuesta = '".date("Y-m-d")."',
+								estado = 2 ,
+								id_funcionario = $id_usuario,
+								respuesta =  '$descripcion' ,
+								fichero_respuesta = '$filePath'
+								 WHERE id = $id_solicitud ;  ";
+ 								
+									if ($conexion->query($consulta) === TRUE) {
+									    $retorna .= "Solicitud Resuelta";
+									} else {
+									    $retorna .= "Error solicitud no Resuelta: " . $conexion->error;
+									}
+
+									$conexion->close();
+
+					
+							 	 return $consulta;
+
+
+
+					}
+
+
+
 					public function listar_solicitud_admin(){
 
 						$retorna='';
@@ -29,14 +68,14 @@ class Admin extends Db
 						$rol = $_SESSION['rol'];
 
 					 	$consulta = "SELECT s.* , u.nombre, u.apellidos , paises.Pais , ciudades.Ciudad 
-		FROM
-		    solicitud s ,usuario u,`paises`, `ciudades`
-		WHERE 
+						FROM
+						    solicitud s ,usuario u,`paises`, `ciudades`
+						WHERE 
 
-		s.`id_usuario` = u.id AND
-		u.`fk_id_pais` = `paises`.`Codigo` AND
-		u.`fk_id_ciudad` = `ciudades`.`idCiudades` and
-		 s.id_asignado = $rol and s.estado = 1; ";
+						s.`id_usuario` = u.id AND
+						u.`fk_id_pais` = `paises`.`Codigo` AND
+						u.`fk_id_ciudad` = `ciudades`.`idCiudades` and
+						 s.id_asignado = $rol and s.estado = 1; ";
 
 						$retorna .= '<table id="asig_table" border="1"  cellpadding="5">
 					        <thead>

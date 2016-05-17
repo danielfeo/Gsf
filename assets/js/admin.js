@@ -51,7 +51,9 @@ $("#formInscripcion").submit(function(e)
     {
      alertify.alert(data);
      $('#formInscripcion')[0].reset();
+     $('#btn_responder_solicitudes').click();
      $('#loading').hide();
+     alertify.alert("La respuesta ha sido entregada!");
     },
      error: function(jqXHR, textStatus, errorThrown)
      {
