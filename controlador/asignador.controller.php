@@ -28,12 +28,18 @@ class Asignador extends Db
 
 								$conexion = $this->conexion();
 
+								session_start();
+
+								$id_usuario = $_SESSION['id'];
+
 								$consulta = "
 								UPDATE solicitud
 								set
-								`estado` = 1 ,
-								`id_asignado` = $tipo 
-								 WHERE `id`= $id ; ";
+								
+								fecha_asignacion = '".date("Y-m-d")."',
+								estado = 1 ,
+								id_asignado = $tipo 
+								 WHERE `id`= $id ;  ";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Solicitud asignada";

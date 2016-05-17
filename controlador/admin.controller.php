@@ -26,8 +26,18 @@ class Admin extends Db
 						session_start();
 
 						$id_usuario = $_SESSION['id'];
+						$rol = $_SESSION['rol'];
 
-					 	$consulta = "SELECT * FROM `gestor_solicitudes`.`solicitud` where estado = 0 ";
+					 	$consulta = "SELECT s.* , u.nombre, u.apellidos , paises.Pais , ciudades.Ciudad 
+		FROM
+		    solicitud s ,usuario u,`paises`, `ciudades`
+		WHERE 
+
+		s.`id_usuario` = u.id AND
+		u.`fk_id_pais` = `paises`.`Codigo` AND
+		u.`fk_id_ciudad` = `ciudades`.`idCiudades` and
+		 s.id_asignado = $rol and s.estado = 1; ";
+
 						$retorna .= '<table id="asig_table" border="1"  cellpadding="5">
 					        <thead>
 					            <tr>
@@ -35,22 +45,29 @@ class Admin extends Db
 					                <th>Documento</th>
 					                <th>Estado</th>
 					                <th>Solicitado en</th>
-					                <th>Asignar</th>
+					                <th>Fecha Asigación</th>
+					                
+					                <th>Ciudad</th>
+					                <th>Solicitante</th>
+					                <th>Responder</th>
 
 					            </tr>
 					        </thead>
-				            <tbody><tr>';
+				            <tbody>';
 						    
 						    if ($resultado = $conexion->query($consulta)) {
 						    while ($fila = $resultado->fetch_row()) {
 
-						         $retorna .= '<td> '.$fila[2].' </td>
+						         $retorna .= '<tr><td> '.$fila[2].' </td>
 						         <td><a target="_blank" href="documentos/'.$fila[3].'">
 						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>
-						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td><td>'.$fila[9].'</td>';
+						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td><td>'.$fila[9].'</td>
+						         <td>'.$fila[10].'</td>
+						         <td>'.$fila[18].'</td>
+						         <td>'.$fila[15]." ".$fila[16].'</td>';
 
 						         $retorna .= '
-									<td> <a class="btn btn-primary" id="asignar_btn" data-id="'.$fila[0].'">Asignar</a></td>
+									<td> <a class="btn btn-primary" id="respuesta_btn" data-id="'.$fila[0].'">Responder</a></td>
 
 						         ';
 						  		  $retorna .= '</tr>';

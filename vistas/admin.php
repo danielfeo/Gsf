@@ -34,9 +34,10 @@
             <h4 class="modal-title">Responder Solicitud</h4>
           </div>
           <div class="modal-body">
-          							<form class="form-basic">
+          							<form class="form-basic" id="formInscripcion" name="formInscripcion">
 
 									<input type="hidden" id="id" name="id" value="">
+                  <input  class="form-control" type="hidden" name="ruta" id="ruta" value="respuesta">
 
 									      <div class="form-group">
                   					
@@ -64,7 +65,7 @@
 
 			                   <div class="form-group">
                 
-						            <input class="form-control"  type="button" id="responder_solicitud" name="responder_solicitud" value="Respnder" > 
+						            <input class="form-control"  type="button" id="responder_solicitud" name="responder_solicitud" value="Resopnder" > 
 						            
 						            </div>
 

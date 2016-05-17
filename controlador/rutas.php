@@ -154,6 +154,19 @@ if ($_REQUEST['ruta'] == 'listar_admin'){
 }//FIN METODO LISTAR ADMINISTRADORES
 
 
+
+if ($_REQUEST['ruta'] == 'listar_solicitud_admin'){
+
+  include_once ('admin.controller.php');
+
+ $Admin = new Admin();
+  
+
+ echo $Admin->listar_solicitud_admin();
+
+}//FIN METODO LISTAR SOLICITUDES
+
+
 if ($_REQUEST['ruta'] == 'listar_solicitudes'){
 
   include_once ('Usuario.controller.php');
