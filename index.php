@@ -39,6 +39,7 @@
 								<li id="btn_solicitudes"><a href="#" >Ver solicitudes</a></li>
 								<li id="btn_crear_usuarios"><a href="#" >Crear usuarios</a></li>
 								<li id="btn_asignar"><a href="#" >Asignar solicitudes</a></li>
+								<li id="btn_reporte"><a href="#" >Ver reporte de solicitudes</a></li>
 								<li id="btn_responder_solicitudes"><a href="#" >Responder solicitudes</a></li>
 								
 								<li id="btn_cerrar"><a href="#" >Salir</a></li>
