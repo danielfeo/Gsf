@@ -3338,6 +3338,9 @@
 	}
 
 /* Menu */
+td {
+    vertical-align: middle;
+}
 
 	#menu {
 		-moz-transform: translateX(25em);

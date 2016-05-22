@@ -10,6 +10,7 @@
     $('#btn_admin').hide();
     $('#lista_Admin').hide();
     $('#btn_responder_solicitudes').hide();
+    $('#btn_reporte').hide();
 	function controlAjaxVista (vistaActual) {
 		
 	$.ajax(

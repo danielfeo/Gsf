@@ -62,14 +62,16 @@ class Usuario extends Db
 						$id_usuario = $_SESSION['id'];
 
 					 	$consulta = "call sp_taer_solicitudes($id_usuario);";
-						$retorna .= '<table id="listTable" border="1"  cellpadding="5">
+						$retorna .= '<table id="listTable" border="1"  cellpadding="5" style="text-align: center;">
 					        <thead>
 					            <tr>
 					                <th>Descripción</th>
 					                <th>Documento</th>
 					                <th>Estado</th>
 					                <th>Solicitado en</th>
-
+								    <th>Resuelto en</th>
+								    <th>Respuesta</th>
+								    <th>Documeto Respuesta</th>
 					            </tr>
 					        </thead>
 				            <tbody><tr>';
@@ -77,10 +79,15 @@ class Usuario extends Db
 						    if ($resultado = $conexion->query($consulta)) {
 						    while ($fila = $resultado->fetch_row()) {
 
-						         $retorna .= '<td> '.$fila[2].' </td>
+						         $retorna .= '<td><textarea> '.$fila[2].'</textarea> </td>
 						         <td><a target="_blank" href="documentos/'.$fila[3].'">
 						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>
-						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td><td>'.$fila[9].'</td>';
+						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td>
+						         <td>'.$fila[9].'</td>
+						         <td>'.$fila[11].'</td>
+						         <td><textarea>'.$fila[13].'</textarea></td>
+						         <td><a target="_blank" href="documentos/'.$fila[14].'">
+						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>';
 						  		  $retorna .= '</tr>';
 						    }
 					    $resultado->close();
