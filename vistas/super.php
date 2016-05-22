@@ -253,7 +253,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Generar Reporte</h4>
       </div>
       <div class="modal-body">
        
@@ -270,7 +270,7 @@
                                            
                                 <label  for="tipo">Fecha Final</label>
                                       
-                                <input type="text"  id="fechai" name="fechai">  
+                                <input type="text"  id="fechaf" name="fechaf">  
 
                                 </div>
 

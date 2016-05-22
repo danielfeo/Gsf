@@ -11,6 +11,13 @@ $('#lista_Admin').show();
 $('#tabla_admin').hide();
 $('#btn_reporte').show();
 
+  $(function() {
+    $( "#fechai" ).datepicker();
+  });
+
+     $(function() {
+    $( "#fechaf" ).datepicker();
+  });
 
  $('#btn_reporte').click(function(){
 

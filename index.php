@@ -15,6 +15,8 @@
 
 <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
 <!-- tema de bootstrap bootswatch -->
 <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" >
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -118,11 +120,13 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/alertify.min.js"></script>
-			  <script src="assets/js/jquery.dataTables.min.js"></script> 
-     		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+			<script src="assets/js/jquery.dataTables.min.js"></script> 
+     		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+ 		    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		  
+		    
 
-		  
-		  
+
 
 	</body>
 </html>
