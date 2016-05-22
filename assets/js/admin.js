@@ -11,6 +11,7 @@ $('#asignacion').hide();
 $('#btn_asignar').hide();
 $('#btn_responder_solicitudes').show();
 
+
  $('body').delegate('#respuesta_btn','click',function(){
 
 
@@ -120,3 +121,5 @@ $(window).bind('beforeunload',function(){
 
 
 });
+
+

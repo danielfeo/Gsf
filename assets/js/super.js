@@ -9,6 +9,14 @@ $('#loading').hide();
 $('#btn_cerrar').show();
 $('#lista_Admin').show();
 $('#tabla_admin').hide();
+$('#btn_reporte').show();
+
+
+ $('#btn_reporte').click(function(){
+
+ $("#modal_reporte").modal();
+ 
+ });
 
 $('#btn_admin').click(function(){
 

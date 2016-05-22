@@ -62,17 +62,19 @@
 
 			                   <div class="form-group">
                 
-						            <input class="form-control"  type="button" id="responder_solicitud" name="responder_solicitud" value="REs" > 
+						            <input class="form-control"  type="button" id="responder_solicitud" name="responder_solicitud" value="Responder" > 
 						            
 						            </div>
+                        </form>
 
 
 		  </div>
-		  <div class="modal-footer">
+		     <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
           </div>
           
 		
 	</div>
 </div>
-    
+</div>
+
