@@ -12,101 +12,50 @@
 
 <link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
 
-
-<link rel="stylesheet" href="assets/css/bootstrap.min.css" >
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <!-- tema de bootstrap bootswatch -->
-<link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" >
+<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css" >
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	
 	</head>
 	<body>
 
-		<!-- Contenedor principal cabecera -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<img class="img_logo" src="images/logo_fiscalia_azul.png" /><p><a href="#">GESTOR SOLICITUDES FISCALIA</a></p>
-						<nav class="links"  class="navbar navbar-defaultDSS">
-							<ul>
-								<li id="btn_registro"><a href="#" >Registro</a></li>
-								<li id="btn_login"><a href="#" >Iniciar sesion</a></li>
-								<li id="btn_solicitud"><a href="#" >Solicitud</a></li>
-								<li id="btn_admin"><a href="#">Crear administradores</a></li>
-								<li id="lista_Admin"><a href="#">Ver administradores</a></li>
-								<li id="btn_solicitudes"><a href="#" >Ver solicitudes</a></li>
-								<li id="btn_crear_usuarios"><a href="#" >Crear usuarios</a></li>
-								<li id="btn_asignar"><a href="#" >Asignar solicitudes</a></li>
-								<li id="btn_reporte"><a href="#" >Ver reporte de solicitudes</a></li>
-								<li id="btn_responder_solicitudes"><a href="#" >Responder solicitudes</a></li>
-								
-								<li id="btn_cerrar"><a href="#" >Salir</a></li>
-								
-							</ul>
-						</nav>
-						<nav class="main">
-							<ul>
-								<li class="search">
-									<a class="fa-search" href="#search">Search</a>
-									<form id="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Codigo solicitud" />
-									</form>
-								</li>
-								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
-								</li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<section id="menu">
-
-						<!-- Busqueda -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Codigo solicitud" />
-								</form>
-							</section>
-
-						<!-- Links de acceso -->
-							<section>
-								<ul class="links">
-									<li>
-										<a href="#">
-											<h3>Inicio</h3>
-											
-										</a>
-									</li>
-									
-									<li>
-										<a href="#">
-											<h3>Terminos</h3>
-											
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<h3>Contacto</h3>
-											
-										</a>
-									</li>
-								</ul>
-							</section>
-
-						<!-- Login -->
-							<section>
-								<ul class="actions vertical">
-									<li><a id="btn_login" class="button big fit">Iniciar sesion</a></li>
-								</ul>
-							</section>
-
-					</section>
-
+		
+	<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Gestor Solicitudes Fiscalia</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Gestor Solicitudes Fiscalia</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li id="btn_registro"><a href="#" >Registro</a></li>
+					<li id="btn_login"><a href="#" >Iniciar sesion</a></li>
+					<li id="btn_solicitud"><a href="#" >Solicitud</a></li>
+					<li id="btn_admin"><a href="#">Crear administradores</a></li>
+					<li id="lista_Admin"><a href="#">Ver administradores</a></li>
+					<li id="btn_solicitudes"><a href="#" >Ver solicitudes</a></li>
+					<li id="btn_crear_usuarios"><a href="#" >Crear usuarios</a></li>
+					<li id="btn_asignar"><a href="#" >Asignar solicitudes</a></li>
+					<li id="btn_reporte"><a href="#" >Ver reporte de solicitudes</a></li>
+					<li id="btn_responder_solicitudes"><a href="#" >Responder solicitudes</a></li>
+					
+					
+					
+				</ul>
+            <ul class="nav navbar-nav navbar-right">
+                 <li id="btn_cerrar"><a href="#" >Salir</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
 				<!-- Contenedor principal Vistas -->
 					<div id="main">
 
