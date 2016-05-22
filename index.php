@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
 <!-- tema de bootstrap bootswatch -->
-<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css" >
+<link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" >
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	
@@ -26,13 +26,7 @@
 	<nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Gestor Solicitudes Fiscalia</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Gestor Solicitudes Fiscalia</a>
+			<img class="img_logo" src="images/logo_fiscalia_azul.png" /><a class="navbar-brand" href="#"> Gestor Solicitudes Fiscalia</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">

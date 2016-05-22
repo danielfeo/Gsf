@@ -3145,8 +3145,9 @@ td {
 		z-index: 10002;
 	}
 
-	.img_logo {
-    width: 49px;
+.img_logo {
+    width: 38px;
+    float: left;
 }
 
 		#menu > * {
