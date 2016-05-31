@@ -50,7 +50,7 @@
 			                        <option value="4">Extinción del derecho de dominio</option>
 			                        <option value="5">Investigación y judicialización</option>
 			                        <option value="6">Justicia Transicional</option>
-			                        <option value="9">Asignador de solicitudes</option>
+			                        <!--<option value="9">Asignador de solicitudes</option>-->
 
 			                        </select>		
 			                        </div>
