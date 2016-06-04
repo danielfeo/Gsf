@@ -12,8 +12,8 @@ $con = new DB;
 $conexion = $con->conexion();
 
 $consulta = "SELECT COUNT(`solicitud`.`id`),`dependencias`.`dependencia`
- FROM solicitud,dependencias 
- WHERE `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`";
+ FROM solicitud,dependencias
+ WHERE (fecha BETWEEN '$f1' AND '$f2' )AND `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`";
 
  ?>
  <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" >

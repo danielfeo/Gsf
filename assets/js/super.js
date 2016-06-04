@@ -12,11 +12,11 @@ $('#tabla_admin').hide();
 $('#btn_reporte').show();
 
   $(function() {
-    $( "#fechai" ).datepicker();
+    $( "#fechai" ).datepicker({dateFormat: 'yy-mm-dd'});
   });
 
      $(function() {
-    $( "#fechaf" ).datepicker();
+    $( "#fechaf" ).datepicker({dateFormat: 'yy-mm-dd'});
   });
 
  $('#btn_reporte').click(function(){
