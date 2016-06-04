@@ -20,12 +20,7 @@
              <div class="form-group">
                 <label>
                     <span>Tipo de documento</span>
-                    <select name="tipo_documento" id="tipo_documento">
-                        <option >Selecciona....</option>
-                        <option value="Cedula de ciudadania">Cedula de ciudadania....</option>
-                        <option value="Cedula extranjera">Cedula extranjera....</option>
-                        <option value="Targeta de identidad">Targeta de identidad....</option>
-                    </select>
+                   
                 </label>
             </div>
 
@@ -257,7 +252,7 @@
       </div>
       <div class="modal-body">
        
-                            <form>
+                            <form method="get" action="./controlador/crear_pdf.php" target="_blank" > 
                                 <div class="form-group">
                                            
                                 <label  for="tipo">Fecha inicial</label>
@@ -273,12 +268,27 @@
                                 <label  for="tipo">Fecha Final</label>
                                       
                                 <input type="text"  id="fechaf" name="fechaf">  
+                                
+                               
+
+                                </div>
+                                
+                                 <div class="form-group">
+
+                                 <select name="reporte_tipo">
+                                    <option value="1">Reporte de solcitudes por area misional</option>
+                                    <option value="2">Reporte </option>
+                                    <option value="3">Reporte</option>
+                                    <option value="4">Reporte </option>
+                                    <option value="5">Reporte </option>
+                                    <option value="6">Reporte </option>
+                                </select>
 
                                 </div>
 
                                  <div class="form-group">
                 
-                                    <input class="form-control"  type="button" id="reporte" name="reporte" value="Generar" > 
+                                    <input class="form-control"  type="submit" id="reporte" name="reporte" value="Generar" > 
                                     
                                  </div>
 

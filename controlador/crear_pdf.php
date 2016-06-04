@@ -1,8 +1,21 @@
 <?php
 	//ob_start guardará en un búfer lo que esté
 	//en la ruta del include.
+    $caso = $_REQUEST['reporte_tipo'];
+        
+        switch ($caso) {
+        case '1':
+             $reporte = "/Formato_Sesiones_PDF.php";
+            break;
+        
+        default:
+            # code...
+            break;
+    }
+
 	ob_start();
-    include(dirname(__FILE__).'/Formato_Sesiones_PDF.php');
+   
+    include(dirname(__FILE__).$reporte);
     //En una variable llamada $content se obtiene lo que tenga la ruta especificada
     //NOTA: Se usa ob_get_clean porque trae SOLO el contenido
     //Evitará este error tan común en FPDF:
@@ -17,7 +30,7 @@
      * */
     try
     {
-        $html2pdf = new HTML2PDF('P', array(400,300), 'es', true, 'UTF-8', 3); //Configura la hoja
+        $html2pdf = new HTML2PDF('P', 'letter', 'es', true, 'UTF-8', 3); //Configura la hoja
         $html2pdf->pdf->SetDisplayMode('fullpage'); //Ver otros parámetros para SetDisplaMode
         $html2pdf->writeHTML($content); //Se escribe el contenido
         $html2pdf->Output('Reporte.pdf'); //Nombre default del PDF
