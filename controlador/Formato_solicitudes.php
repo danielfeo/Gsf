@@ -11,13 +11,26 @@ $f2 = $_REQUEST['fechaf'];
 $con = new DB;
 $conexion = $con->conexion();
 
-$consulta = "SELECT COUNT(`solicitud`.`id`),`dependencias`.`dependencia`
- FROM solicitud,dependencias
- WHERE (fecha BETWEEN '$f1' AND '$f2' )AND `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`";
-
- $consulta_1 = "SELECT COUNT(`solicitud`.`id`),`dependencias`.`dependencia`
- FROM solicitud,dependencias
- WHERE (fecha_respuesta BETWEEN '$f1' AND '$f2' )AND `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`";
+$consulta = "SELECT
+    `dependencias`.`dependencia`
+    , `solicitud`.`descripcion`
+    , `usuario`.`documento`
+    , `usuario`.`nombre`
+    , `usuario`.`apellidos`
+    , `paises`.`Pais`
+    , `ciudades`.`Ciudad`
+FROM
+    `gestor_solicitudes`.`usuario`
+    INNER JOIN `gestor_solicitudes`.`solicitud` 
+        ON (`usuario`.`id` = `solicitud`.`id_usuario`)
+    INNER JOIN `gestor_solicitudes`.`dependencias` 
+        ON (`solicitud`.`id_asignado` = `dependencias`.`id`)
+    INNER JOIN `gestor_solicitudes`.`paises` 
+        ON (`paises`.`Codigo` = `solicitud`.`fk_cod_pais`)
+    INNER JOIN `gestor_solicitudes`.`ciudades` 
+        ON (`ciudades`.`idCiudades` = `solicitud`.`fk_id_ciudad`)
+       WHERE (fecha BETWEEN '$f1' AND '$f2' ) 
+       ;";
 
  ?>
  <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" >
@@ -46,14 +59,20 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
         Fiscalia general de La nación <?php echo date(DATE_RFC2822); ?>
       </page_footer>
 
-<div style="text-aling:center;font-weight:bold;padding:20px;">REPORTE SOLICITUDES POR AREA COMPRENDIDO ENTRE LAS FECHAS  (<?php echo $f1.'  -  '.$f2 ?>)</div>
+<div style="text-aling:center;font-weight:bold;padding:20px;">REPORTE SOLICITUDES DETALLE SOLICITUDES ENTRE LAS FECHAS  (<?php echo $f1.'  -  '.$f2 ?>)</div>
 <table border="1" style="text-align: center;border-radius:10px">
 <thead style="color: white;font-weight: bold;">
   
 
   <tr style="background-color: #096cce;">
-    <td  style="width:400px;">CANTIDAD DE SOLICITUDES REALIZADAS PRO LOS USUARIOS</td>
-    <td  style="width:286px;">Dependencia</td>  
+   
+    <td  style="width:400px;">dependencia</td>
+    <td  style="width:400px;">descripcion</td>
+    <td  style="width:400px;">documento</td>
+    <td  style="width:400px;">nombre</td>
+    <td  style="width:400px;">apellidos</td>
+    <td  style="width:400px;">Pais</td>
+    <td  style="width:400px;">Ciudad </td>
   </tr>
  </thead>
  <tbody>
@@ -62,28 +81,17 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
                 while ($fila = $resultado->fetch_row()) {
 
                      echo ' <tr><td> '.$fila[0].' </td>
-                     <td>'.$fila[1].'</td> </tr>';
-      }}
-      ?>
- 
-   </tbody>
-  </table>
-  <table border="1" style="margin-top:20px;text-align: center;border-radius:10px">
-  <thead style="color: white;font-weight: bold;">
-  
+                                <td>'.$fila[1].'</td> 
+                                <td>'.$fila[2].'</td> 
+                                <td>'.$fila[3].'</td> 
+                                <td>'.$fila[4].'</td> 
+                                <td>'.$fila[5].'</td> 
+                                <td>'.$fila[6].'</td> 
+                              
 
-  <tr style="background-color: #096cce;">
-    <td  style="width:400px;">CANTIDAD DE SOLICITUDES RESUELTAS</td>
-    <td  style="width:286px;">Dependencia</td>  
-  </tr>
-  </thead>
-  <tbody>
-    <?php
-     if ($resultado = $conexion->query($consulta_1)) {
-                while ($fila = $resultado->fetch_row()) {
 
-                     echo ' <tr><td> '.$fila[0].' </td>
-                     <td>'.$fila[1].'</td> </tr>';
+
+                            </tr>';
       }}
       ?>
  

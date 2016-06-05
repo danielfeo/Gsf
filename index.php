@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="assets/css/jquery-ui.css">
 
 <!-- tema de bootstrap bootswatch -->
-<link rel="stylesheet" href="assets/css/space.bootstrap.min" >
+<link rel="stylesheet" href="assets/css/space.bootstrap.min.css" >
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	
@@ -65,7 +65,7 @@
 			<script src="assets/js/alertify.min.js"></script>
 			<script src="assets/js/jquery.dataTables.min.js"></script> 
      		<script src="assets/js/bootstrap.min.js"></script>
- 		    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 		    <script src="assets/js/jquery-ui.js"></script>
 		  
 		    
 

@@ -6,6 +6,13 @@
         switch ($caso) {
         case '1':
              $reporte = "/Formato_Sesiones_PDF.php";
+             $tipo='letter';
+             $orientacion = 'P';
+            break;
+        case '2':
+             $reporte = "/Formato_solicitudes.php";
+             $tipo=array(800,400);
+             $orientacion = 'L';
             break;
         
         default:
@@ -30,7 +37,7 @@
      * */
     try
     {
-        $html2pdf = new HTML2PDF('P', 'letter', 'es', true, 'UTF-8', 3); //Configura la hoja
+        $html2pdf = new HTML2PDF($orientacion, $tipo, 'es', true, 'UTF-8', 3); //Configura la hoja
         $html2pdf->pdf->SetDisplayMode('fullpage'); //Ver otros parámetros para SetDisplaMode
         $html2pdf->writeHTML($content); //Se escribe el contenido
         $html2pdf->Output('Reporte.pdf'); //Nombre default del PDF

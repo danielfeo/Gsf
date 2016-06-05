@@ -277,7 +277,7 @@
 
                                  <select name="reporte_tipo">
                                     <option value="1">Reporte de solcitudes por area misional</option>
-                                    <option value="2">Reporte </option>
+                                    <option value="2">Reporte detallado solicitudes</option>
                                     <option value="3">Reporte</option>
                                     <option value="4">Reporte </option>
                                     <option value="5">Reporte </option>
