@@ -14,6 +14,12 @@
              $tipo=array(800,400);
              $orientacion = 'L';
             break;
+
+        case '3':
+             $reporte = "/Formato_tiempos.php";
+             $tipo=array(500,800);
+             $orientacion = 'P';
+            break;
         
         default:
             # code...
