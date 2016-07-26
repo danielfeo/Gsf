@@ -9,7 +9,7 @@
 				</h4>
 				
 				<h6>
-					Al sistema Por favor <a class="btn btn-primary btn-large" href="http://www.layoutit.com/build#">Inicia sesion</a>  o registrate, por medio del siguiente formulario.
+					Al sistema Por favor <a class="btn btn-primary btn-large" id='btn_login'>Inicia sesion</a>  o registrate, por medio del siguiente formulario.
 				</h6>
 			</div>
 		</div>

@@ -1,5 +1,7 @@
 <?php
 
+
+
 if ($_REQUEST['ruta'] == 'respuesta'){
 
 session_start();
@@ -204,6 +206,7 @@ if ($_REQUEST['ruta'] == 'alterar_usuario_misional'){
 
 
 
+
 if ($_REQUEST['ruta'] == 'listar_admin'){
 
   include_once ('super.controller.php');
@@ -228,6 +231,17 @@ if ($_REQUEST['ruta'] == 'listar_solicitud_admin'){
 
 }//FIN METODO LISTAR SOLICITUDES
 
+
+if ($_REQUEST['ruta'] == 'traer_dependencia'){
+
+ include_once ('admin.controller.php');
+
+ $Admin = new Admin();
+ 
+
+ echo json_encode($Admin->traer_dependencia());
+
+}//FIN METODO TRAER DEPENDENCIA
 
 if ($_REQUEST['ruta'] == 'listar_solicitudes'){
 

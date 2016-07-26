@@ -177,7 +177,7 @@ class Usuario extends Db
 
 								    }
 							    $resultado->close();
-								}
+								}else{
 
 						$clave = $this->contra();
 
@@ -192,13 +192,14 @@ class Usuario extends Db
 							   $consulta = "call sp_insertar_usuario('$tipo_doc','$doc','$nom','$ape','$cel','$fij','$pais','$ciudad','$direccion','$mail','$clave','8')";
  								
 									if ($conexion->query($consulta) === TRUE) {
-									    $retorna .= "Usuario Insertado";
+									    $retorna .= "Usuario Insertado su contraseña temporal es: ".$clave;
 									} else {
 									    $retorna .= "Error Usuario no insertado: " . $conexion->error."$consulta ";
 									}
 
 								
 							   return $retorna;
+							   }
 
 					}
 

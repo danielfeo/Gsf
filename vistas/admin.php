@@ -7,7 +7,7 @@
 
     <div class="panel panel-default">
     
-    <div class="panel-heading">Panel Respuesta  de solicitudes</div>
+    <div class="panel-heading">Panel Respuesta  de solicitudes Dependencia: <label id="dependencia"></label></div>
 
         <div class="panel-body">
         
