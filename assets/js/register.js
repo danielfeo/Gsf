@@ -56,6 +56,7 @@ $( document ).ready(function() {
         success: function(formularioResultado)
          {
             alertify.alert(formularioResultado);
+            $('#btn_registro').click();
          }		
 		});
     	

@@ -337,7 +337,7 @@ echo $estado;
 
 if ($_REQUEST['ruta'] == 'registar_usuario'){
 
-  $tipo_documento=$_REQUEST['tipo_documento'];
+ $tipo_documento=$_REQUEST['tipo_documento'];
  $documento=$_REQUEST['documento'];
  $nombre=$_REQUEST['nombre'];
  $apellidos=$_REQUEST['apellidos'];

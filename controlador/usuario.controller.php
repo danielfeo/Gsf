@@ -177,7 +177,7 @@ class Usuario extends Db
 
 								    }
 							    $resultado->close();
-								}else{
+								}
 
 						$clave = $this->contra();
 
@@ -199,7 +199,7 @@ class Usuario extends Db
 
 								
 							   return $retorna;
-							   }
+							   
 
 					}
 
