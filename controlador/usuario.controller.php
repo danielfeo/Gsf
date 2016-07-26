@@ -183,7 +183,7 @@ class Usuario extends Db
 
 						$msg = 'Bienvenido al sistema su clave es: '.$clave;
 
-						mail($mail,"Contraseña plataforma Fiscalia",$msg);
+						//mail($mail,"Contraseña plataforma Fiscalia",$msg);
 
 								
 
