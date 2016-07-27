@@ -19,7 +19,7 @@ class Admin extends Db
 
 
 					public function respuesta_solicitud($id_solicitud,$descripcion,$filePath){
-
+						session_start();
 						$retorna='';
 
 								$conexion = $this->conexion();
@@ -49,6 +49,41 @@ class Admin extends Db
 
 					
 							 	 return $consulta;
+
+
+
+					}
+
+					public function traer_dependencia(){
+						session_start();
+
+						$retorna='';
+
+								$conexion = $this->conexion();
+
+								
+
+								$rol = $_SESSION['rol'];
+
+								$consulta = "
+								SELECT DISTINCT `dependencias`.`dependencia`
+								FROM
+								    `gestor_solicitudes`.`usuario`
+								    INNER JOIN `gestor_solicitudes`.`dependencias` 
+								        ON (`usuario`.`rol` = `dependencias`.`id`) WHERE `usuario`.rol = $rol; ";
+ 								
+			 						if ($resultado = $conexion->query($consulta)) {
+									    while ($fila = $resultado->fetch_row()) {
+
+									         $retorna .= $fila[0];
+
+									    }
+								    $resultado->close();
+									}
+									
+
+					
+							 	 return  $retorna;
 
 
 

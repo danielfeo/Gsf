@@ -1,5 +1,23 @@
 $( document ).ready(function() {
 
+
+
+     $.ajax({
+    url: 'controlador/rutas.php',
+     data:  {
+         ruta: 'traer_dependencia'
+      },
+    dataType: 'json',
+    success: function (resp) {
+
+       console.log(resp);
+       $('#dependencia').text(resp);
+    },
+    error: function (req, status, err) {
+        console.log('Something went wrong', status, err);
+    }
+});
+
 $('#btn_admin').hide();
 $('#btn_registro').hide();
 $('#btn_login').hide();
