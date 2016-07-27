@@ -22,7 +22,8 @@
                 <label>
                     <span>Ciudad de los hechos</span>
                     <select name="ciudad" id="ciudad">
-                        <option >Selecciona....</option></select>
+                        <option >Selecciona....</option>
+                    </select>
                 </label>
             </div>
 

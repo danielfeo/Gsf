@@ -28,8 +28,7 @@ class Usuario extends Db
 									 gestor_solicitudes.solicitud
 									 (id,dependencia,descripcion,fichero,id_usuario,estado
 									 	,id_asignado,fk_id_ciudad,fk_cod_pais,fecha)
-									  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'
-									  	$ciudad','CO','".date("Y-m-d")."');";
+									  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'$ciudad','CO','".date("Y-m-d")."');";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Solicitud tramitada correctamente";
@@ -62,6 +61,7 @@ class Usuario extends Db
 						$id_usuario = $_SESSION['id'];
 
 					 	$consulta = "call sp_taer_solicitudes($id_usuario);";
+						
 						$retorna .= '<table id="listTable" border="1"  cellpadding="5" style="text-align: center;">
 					        <thead>
 					            <tr>

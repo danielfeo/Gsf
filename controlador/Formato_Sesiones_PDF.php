@@ -52,7 +52,7 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
   
 
   <tr style="background-color: #096cce;">
-    <td  style="width:400px;">CANTIDAD DE SOLICITUDES REALIZADAS PRO LOS USUARIOS</td>
+    <td  style="width:400px;">CANTIDAD DE SOLICITUDES REALIZADAS POR LOS USUARIOS</td>
     <td  style="width:286px;">Dependencia</td>  
   </tr>
  </thead>

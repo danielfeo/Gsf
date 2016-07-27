@@ -90,6 +90,9 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
                          $resp = strtotime($fila[9]);
                          $datediff = $resp - $asig; 
                          $diferencia =  floor($datediff/(60*60*24));
+                         if($resp==""){
+                         	$diferencia = "No resuelta en estos ";
+                         }
 
                      echo ' <tr><td>'.$fila[0].'</td>
                                 <td>'.$fila[1].'</td> 
