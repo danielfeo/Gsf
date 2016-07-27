@@ -282,7 +282,7 @@ function validar_mail(a) {
     if (atpos<1 || dotpos<atpos+2 || dotpos+2>=a.length) {
         
         return false;
-    }
+    }else{return true;}
 }
 
 
