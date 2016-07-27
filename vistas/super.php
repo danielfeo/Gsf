@@ -20,7 +20,12 @@
              <div class="form-group">
                 <label>
                     <span>Tipo de documento</span>
-                   
+                     <select name="tipo_documento" id="tipo_documento" class="form-control">
+                        <option >Selecciona....</option>
+                        <option value="Cedula de ciudadania">Cedula de ciudadania....</option>
+                        <option value="Cedula extranjera">Cedula extranjera....</option>
+                        <option value="Targeta de identidad">Targeta de identidad....</option>
+                    </select>
                 </label>
             </div>
 
@@ -103,6 +108,7 @@
                         <option value="5">Investigación y judicialización</option>
                         <option value="6">Justicia Transicional</option>
                         <option value="9">Asignador de solicitudes</option>
+                        <option value="10">Control disciplinario</option>
                        
 
 

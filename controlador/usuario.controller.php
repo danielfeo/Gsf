@@ -169,7 +169,7 @@ class Usuario extends Db
 
 						$conexion = $this->conexion();
 
-							$consulta = "select * from Usuario where documento = $doc ";
+							$consulta = "select * from usuario where documento = $doc ";
 
 							   if ($resultado = $conexion->query($consulta)) {
 								    while ($fila = $resultado->fetch_row()) {

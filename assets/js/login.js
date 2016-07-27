@@ -37,7 +37,7 @@ $( document ).ready(function() {
          {
 
             if(res==0){
-            alertify.alert('Su usuario ha sido deshabilitado');
+            alertify.alert('Su usuario ha sido deshabilitado o su contraseña es erronea!');
             
              }
 

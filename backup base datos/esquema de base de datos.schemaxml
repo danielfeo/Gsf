@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">gestor_solicitudes</database>
+</source>
+<canvas>
+<table tablename="ciudades" alias="" left="885" top="202" width="150" height="113" />
+<table tablename="dependencias" alias="" left="182" top="62" width="150" height="113" />
+<table tablename="paises" alias="" left="404" top="257" width="150" height="113" />
+<table tablename="solicitud" alias="" left="400" top="15" width="150" height="233" />
+<table tablename="usuario" alias="" left="681" top="0" width="150" height="233" />
+<join type = "Inner Join">
+<from tablename = "paises" alias = "">Codigo</from>
+<to tablename = "ciudades" alias = "">Paises_Codigo</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "solicitud" alias = "">dependencia</from>
+<to tablename = "dependencias" alias = "">id</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "usuario" alias = "">fk_id_ciudad</from>
+<to tablename = "ciudades" alias = "">idCiudades</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "usuario" alias = "">fk_id_pais</from>
+<to tablename = "paises" alias = "">Codigo</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "solicitud" alias = "">id_usuario</from>
+<to tablename = "usuario" alias = "">id</to>
+</join>
+</canvas>
+<grid>
+</grid>
+</querybuilder>
