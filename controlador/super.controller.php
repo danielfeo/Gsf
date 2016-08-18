@@ -85,8 +85,7 @@ class Super extends Db
 
 					}
 
-
-					public function alterar_usuario_misional($editar_id,$editar_apellidos,$editar_nombre,$editar_tel_fijo,$editar_telefono_cel,$editar_direccion,$editar_email,$editar_tipo){
+					public function alterar_usuario_misional($editar_id.$editar_apellidos,$editar_nombre,$editar_tel_fijo,$editar_telefono_cel,$editar_direccion,$editar_email,$editar_tipo){
 
 						
  								$retorna='';

@@ -73,7 +73,9 @@ if ($_REQUEST['ruta'] == 'solicitud'){
 session_start();
  $descripcion=$_REQUEST['descripcion'];
  $ciudad=$_REQUEST['ciudad'];
+ $tipo_solicitud=$_REQUEST['tipo_solicitud'];
  $id_usuario=$_SESSION['id'];
+
  $filePath='';
 
 if(isset($_FILES['file1'])){			
@@ -125,7 +127,7 @@ include_once ('Usuario.controller.php');
  $Usuario = new Usuario();
   
 
- echo $Usuario->insertar_solicitud($id_usuario,$ciudad,$descripcion,$filePath);
+ echo $Usuario->insertar_solicitud($tipo_solicitud,$id_usuario,$ciudad,$descripcion,$filePath);
 
 }//FIN METODO SOLICITUD
 

@@ -19,7 +19,7 @@ class Usuario extends Db
 
 					}
 					
-					public function insertar_solicitud($id_usuario,$ciudad,$descripcion,$filePath){
+					public function insertar_solicitud($tipo_solicitud,$id_usuario,$ciudad,$descripcion,$filePath){
 
 									$conexion = $this->conexion();
 
@@ -71,6 +71,7 @@ class Usuario extends Db
 					                <th>Solicitado en</th>
 								    <th>Resuelto en</th>
 								    <th>Respuesta</th>
+								    <th>Area misional</th>
 								    <th>Documeto Respuesta</th>
 					            </tr>
 					        </thead>
@@ -86,6 +87,7 @@ class Usuario extends Db
 						         <td>'.$fila[9].'</td>
 						         <td>'.$fila[11].'</td>
 						         <td><textarea>'.$fila[13].'</textarea></td>
+						         <td>'.$fila[16].'</td>
 						         <td><a target="_blank" href="documentos/'.$fila[14].'">
 						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>';
 						  		  $retorna .= '</tr>';

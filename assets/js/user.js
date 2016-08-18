@@ -1,20 +1,13 @@
 $( document ).ready(function() {
-
-
 	$('#btn_registro').hide();
 	$('#btn_login').hide();
 	$('#btn_solicitudes').show();
     $('#btn_solicitud').show();
     $('#btn_cerrar').show();
 	$('#btn_solicitud').click(function(){
-
     $('#formInscripcion').show();
-     $('#cont_tabla_solicitudes').hide();
-
-
-
-
-	});
+    $('#cont_tabla_solicitudes').hide();
+});
 
 
     

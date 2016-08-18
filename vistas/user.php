@@ -1,8 +1,8 @@
 <script src="assets/js/user.js"></script>
 
- <div id="loading">
+<div id="loading">
   <img id="loading-image" src="http://3.bp.blogspot.com/-JeGYJyA7z2k/VNUMuthhjDI/AAAAAAAAATk/LnNLV4OGz-A/s1600/iconoCargando-1-.gif"  alt="Loading..." />
-  </div>
+</div>
 <div class="container-fluid">
 
     <div class="panel panel-default">
@@ -21,12 +21,19 @@
              <div class="form-group">
                 <label>
                     <span>Ciudad de los hechos</span>
-                    <select name="ciudad" id="ciudad">
+                    <select name="tipo_solicitud" id="tipo_solicitud">
                         <option >Selecciona....</option>
+                         <option value="1" >Petición</option>
+                         <option value="2" >Queja</option>
+                         <option value="3" >Reclamo</option>
+                         <option value="4" >Peticion</option>
+                         <option value="5" >Solicitudes</option>
                     </select>
                 </label>
             </div>
 
+
+          
            
             <div class="form-group">
                 <label>
@@ -34,7 +41,19 @@
                     <textarea name="descripcion" id="descripcion"></textarea>
                 </label>
             </div>
-              <div class="panel panel-default">
+            
+            <div class="form-group">
+                <label>
+                    <span>Ciudad de los hechos</span>
+                    <select name="ciudad" id="ciudad">
+                        <option >Selecciona....</option>
+                    </select>
+                </label>
+            </div>
+
+
+
+            <div class="panel panel-default">
                 
                      <div class="panel-heading">Selecciona archivo con todos los documentos en pdf</div>
                 
@@ -52,9 +71,6 @@
             
             </div>
 
-
-
-                       
         </form>
 
         </div>

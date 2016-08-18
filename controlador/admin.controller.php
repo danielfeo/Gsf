@@ -19,7 +19,7 @@ class Admin extends Db
 
 
 					public function respuesta_solicitud($id_solicitud,$descripcion,$filePath){
-						session_start();
+
 						$retorna='';
 
 								$conexion = $this->conexion();
@@ -55,7 +55,7 @@ class Admin extends Db
 					}
 
 					public function traer_dependencia(){
-						session_start();
+						
 
 						$retorna='';
 
