@@ -20,7 +20,7 @@
 
              <div class="form-group">
                 <label>
-                    <span>Ciudad de los hechos</span>
+                    <span>Tipo de solicitud</span>
                     <select name="tipo_solicitud" id="tipo_solicitud">
                         <option >Selecciona....</option>
                          <option value="1" >Petición</option>
