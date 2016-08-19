@@ -30,7 +30,7 @@ class Super extends Db
 
 						$id_usuario = $_SESSION['id'];
 
-					 	$consulta = "select * from usuario where rol BETWEEN 2 and 7 or rol = 9 ";
+					 	$consulta = "select * from usuario where rol BETWEEN 2 and 7 or rol = 9 or rol = 10 ";
 						$retorna .= '<table id="admin_table" border="1"  cellpadding="5">
 					        <thead>
 					            <tr>
@@ -57,6 +57,7 @@ class Super extends Db
                          if ($fila[13] ==  5){ $misional= "Investigación y judicialización ";  }
                          if ($fila[13] ==  6){ $misional= "Justicia Transicional ";  }
                          if ($fila[13] ==  9){ $misional= "Asignador solicitudes ";  } 
+                         if ($fila[13] ==  10){ $misional= "Control disipliario ";  } 
 
 						         $retorna .= '<tr>
 						         <td> '.$fila[2].' </td>
