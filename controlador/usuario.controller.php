@@ -88,8 +88,7 @@ class Usuario extends Db
 						         <td>'.$fila[11].'</td>
 						         <td><textarea>'.$fila[13].'</textarea></td>
 						         <td>'.$fila[16].'</td>
-						         <td><a target="_blank" href="documentos/'.$fila[14].'">
-						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>';
+						         <td>'.($fila[14]!=''?'<a target="_blank" href="documentos/'.$fila[14].'">':'').'<img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>';
 						  		  $retorna .= '</tr>';
 						    }
 					    $resultado->close();
