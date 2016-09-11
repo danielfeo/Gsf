@@ -126,7 +126,7 @@ class Usuario extends Db
 								$conexion = $this->conexion();
 
 								$consulta = " CALL sp_logear('$doc','$clave'); ";
-
+								$usuario=  array('rol' => 0,'nombre' => '', 'apellido' => '' );
 							   if ($resultado = $conexion->query($consulta)) {
 								    while ($fila = $resultado->fetch_row()) {
 								 		$_SESSION['id']=$fila[0];
