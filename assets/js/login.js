@@ -60,7 +60,7 @@ $( document ).ready(function() {
 
             controlAjaxVista(4);
              }
-            if(res==9){
+            if(res.rol==9){
             alertify.alert('Asigador de solicitudes '+res.nombre+' '+res.apellido);
             $( "#DIV_CONTENEDOR" ).remove();
 
