@@ -118,7 +118,7 @@ class Usuario extends Db
 					}
 
 					public function logear($doc,$clave){
-					
+					$usuario= array();
 					$retorna='';
 					$rol='';
 					session_start();
@@ -135,12 +135,13 @@ class Usuario extends Db
 								 		$_SESSION['rol']=$fila[13];
 								 		if($fila[14]==0){$rol = 0;}else{
 								 		$rol=$fila[13];
+								 		$usuario=  array('rol' => $rol,'nombre' => $fila[3], 'apellido' => $fila[4] );
 								 		}
 								    }
 							    $resultado->close();
 								}
-
-					return $rol;
+					
+					return json_encode($usuario);
 
 
 					}
