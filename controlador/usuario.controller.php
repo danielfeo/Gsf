@@ -73,6 +73,8 @@ class Usuario extends Db
 								    <th>Respuesta</th>
 								    <th>Area misional</th>
 								    <th>Documeto Respuesta</th>
+								    <th>Aprovación</th>
+
 					            </tr>
 					        </thead>
 				            <tbody><tr>';
@@ -88,8 +90,8 @@ class Usuario extends Db
 						         <td>'.$fila[11].'</td>
 						         <td><textarea>'.$fila[13].'</textarea></td>
 						         <td>'.$fila[16].'</td>
-						         <td>'.($fila[14]!=''?'<a target="_blank" href="documentos/'.$fila[14].'">':'').'<img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>';
-						  		  $retorna .= '</tr>';
+						         <td>'.($fila[14]!=''?'<a target="_blank" href="documentos/'.$fila[14].'">':'').'<img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td><td>'.($fila[14]!=''?'<button type="button" data-id="'.$fila[0].'" title="Click si no estas de acuerdo con la respuesta esta opcion solo estara disponible 8 dias despues de ser resuelta la solicitud." class="btn btn-danger">No Acuerdo</button></td>':'');
+						  		  $retorna .= '</tr><script>$( function() { $( document ).tooltip();} );</script>';
 						    }
 					    $resultado->close();
 						}
