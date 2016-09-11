@@ -21,7 +21,7 @@
              <div class="form-group">
                 <label>
                     <span>Tipo de solicitud</span>
-                    <select name="tipo_solicitud" id="tipo_solicitud">
+                    <select name="tipo_solicitud" id="tipo_solicitud" title="Selecciona el tipo de solicitud que desea tramitar.">
                         <option >Selecciona....</option>
                          <option value="1" >Petición</option>
                          <option value="2" >Queja</option>
@@ -38,14 +38,14 @@
             <div class="form-group">
                 <label>
                     <span>Descripcion</span>
-                    <textarea name="descripcion" id="descripcion"></textarea>
+                    <textarea name="descripcion" id="descripcion" title="Escribe una breve descripción de la solicitud."></textarea>
                 </label>
             </div>
             
             <div class="form-group">
                 <label>
                     <span>Ciudad de los hechos</span>
-                    <select name="ciudad" id="ciudad">
+                    <select name="ciudad" id="ciudad" title="Selecciona la cidudad de los hechos.">
                         <option >Selecciona....</option>
                     </select>
                 </label>
@@ -58,7 +58,7 @@
                      <div class="panel-heading">Selecciona archivo con todos los documentos en pdf</div>
                 
               <div class="panel-body">
-                    <input  type="file" name="file1" id="file1">
+                    <input  type="file" name="file1" id="file1" title="selecciona el pdf con todos los documentos nesesarios identificacion y doncuemntos de apoyo a la solicitud.">
 
             
             </div>

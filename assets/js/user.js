@@ -7,7 +7,11 @@ $( document ).ready(function() {
 	$('#btn_solicitud').click(function(){
     $('#formInscripcion').show();
     $('#cont_tabla_solicitudes').hide();
-});
+    });
+
+$( document ).tooltip();
+
+
 
 
     
