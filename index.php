@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>GESTOR SOLICITUDES FISCALIA</title>
+		<title>GESTOR SOLICITUDES PQR´S FISCALÍA</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -26,7 +26,7 @@
 	<nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-			<img class="img_logo" src="images/logo_fiscalia_azul.png" /><a class="navbar-brand" href="#"> Gestor Solicitudes Fiscalia</a>
+			<img class="img_logo" src="images/logo_fiscalia_azul.png" /><a class="navbar-brand" href="#"> Gestor Solicitudes Fiscalia (PQRS)</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
