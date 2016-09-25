@@ -21,9 +21,7 @@ class Usuario extends Db
 					
 					public function insertar_solicitud($tipo_solicitud,$id_usuario,$ciudad,$descripcion,$filePath){
 
-								     Gestor::insertar()
-
-									$retorna = '';
+								    $retorna = '';
 									$consulta = "INSERT INTO
 									 gestor_solicitudes.solicitud
 									 (id,dependencia,descripcion,fichero,id_usuario,estado
