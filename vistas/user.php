@@ -22,7 +22,7 @@
                 <label>
                     <span>Tipo de solicitud</span>
                     <select name="tipo_solicitud" id="tipo_solicitud" title="Selecciona el tipo de solicitud que desea tramitar.">
-                        <option >Selecciona....</option>
+                         <option >Selecciona....</option>
                          <option value="1" >Petición</option>
                          <option value="2" >Queja</option>
                          <option value="3" >Reclamo</option>
@@ -31,10 +31,6 @@
                     </select>
                 </label>
             </div>
-
-
-          
-           
             <div class="form-group">
                 <label>
                     <span>Descripcion</span>

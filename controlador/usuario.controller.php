@@ -21,7 +21,7 @@ class Usuario extends Db
 					
 					public function insertar_solicitud($tipo_solicitud,$id_usuario,$ciudad,$descripcion,$filePath){
 
-									$conexion = $this->conexion();
+								     Gestor::insertar()
 
 									$retorna = '';
 									$consulta = "INSERT INTO
@@ -41,12 +41,12 @@ class Usuario extends Db
 					
 						private function validar_estado($b){
 						if($b==0){
-						$r='images/espera.png';}
+						$r='<img height="42" src="images/espera.png" title="En espera">';}
 						if($b==1){
-						$r='images/asignado.png';
+						$r='<img height="42" src="images/asignado.png" title="La solicitud ha sido asignada">';
 						}
 						if($b==2){
-						$r='images/solucion.png';
+						$r='<img height="42" src="images/solucion.png" title="La solicitud ha sido respondida">';
 						}
 						return $r;
 					}
@@ -79,13 +79,13 @@ class Usuario extends Db
 					        </thead>
 				            <tbody><tr>';
 						    
-						    if ($resultado = $conexion->query($consulta)) {
+						  if ($resultado = $conexion->query($consulta)) {
 						    while ($fila = $resultado->fetch_row()) {
 
 						         $retorna .= '<td><textarea> '.$fila[2].'</textarea> </td>
 						         <td><a target="_blank" href="documentos/'.$fila[3].'">
 						         <img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td>
-						         <td><img height="42" src="'.$this->validar_estado($fila[5]).'"></td>
+						         <td>'.$this->validar_estado($fila[5]).'</td>
 						         <td>'.$fila[9].'</td>
 						         <td>'.$fila[11].'</td>
 						         <td><textarea>'.$fila[13].'</textarea></td>

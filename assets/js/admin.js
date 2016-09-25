@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
 
 
-     $.ajax({
+$.ajax({
     url: 'controlador/rutas.php',
      data:  {
          ruta: 'traer_dependencia'
@@ -32,11 +32,9 @@ $('#btn_responder_solicitudes').show();
 
  $('body').delegate('#respuesta_btn','click',function(){
 
-
      var id= $(this).data('id');
-
      $('#id').val(id);
-      $("#myModal").modal();
+     $("#myModal").modal();
 
  });
 
