@@ -13,13 +13,13 @@
         <h4 class="modal-title">Formulario de reenvio solicitud</h4>
       </div>
       <div class="modal-body">           
-            <form>
+            <form id="form_reenvio">
               <div class="form-group">
-                <label for="email">Ingresa la descripcion de el no acuerdo a la respuesta </label>
-                <textarea class="form-control" id="solicitud"></textarea>
+                <label for="descripcion">Ingresa la descripcion de el no acuerdo a la respuesta </label>
+                <textarea class="form-control" id="descripcion" name="descripcion"></textarea>
                 <input type="hidden" id="dependencia" name="dependencia">
-                <input type="hidden" id="descripcion" name="descripcion">
                 <input type="hidden" id="fichero" name="fichero">
+                <input type="hidden" id="id" name="id">
                 <input type="hidden" id="id_usuario" name="id_usuario">
                 <input type="hidden" id="estado" name="estado">
                 <input type="hidden" id="id_asignado" name="id_asignado">
@@ -33,7 +33,7 @@
                 <input type="hidden" id="fichero_respuesta" name="fichero_respuesta">
               </div>
               <div class="form-group">
-                <button type="button"  id="reenviar" class="btn btn-info">Enviar</button>
+                <button type="submit"  id="reenviar" class="btn btn-info">Enviar</button>
               </div>
               
             </form>

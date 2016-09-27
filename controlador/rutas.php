@@ -77,6 +77,32 @@ echo json_encode($usuario->listar_solicitud_id($id));
 
 }
 
+if ($_REQUEST['ruta'] == 'reasignar'){
+$id = $_REQUEST["id"];
+$descripcion = $_REQUEST["descripcion"];
+$dependencia = $_REQUEST["dependencia"];
+$fichero = $_REQUEST["fichero"];
+$id_usuario = $_REQUEST["id_usuario"];
+$estado = $_REQUEST["estado"];
+$id_asignado = $_REQUEST["id_asignado"];
+$fk_id_ciudad = $_REQUEST["fk_id_ciudad"];
+$fk_cod_pais = $_REQUEST["fk_cod_pais"];
+$fecha = $_REQUEST["fecha"];
+$fecha_asignacion = $_REQUEST["fecha_asignacion"];
+$fecha_respuesta = $_REQUEST["fecha_respuesta"];
+$id_funcionario = $_REQUEST["id_funcionario"];
+$respuesta = $_REQUEST["respuesta"];
+$fichero_respuesta = $_REQUEST["fichero_respuesta"];
+
+
+include_once ('usuario.controller.php');
+
+$usuario = new Usuario();
+
+echo json_encode($usuario->reasignar($id,$descripcion,$dependencia,$fichero,$id_usuario,$estado,$id_asignado,$fk_id_ciudad,$fk_cod_pais,$fecha,$fecha_asignacion,$fecha_respuesta,$id_funcionario,$respuesta,$fichero_respuesta));
+
+}
+
 //FIN SOLICITUD ID
 
 if ($_REQUEST['ruta'] == 'solicitud'){

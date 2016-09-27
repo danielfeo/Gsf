@@ -12,6 +12,36 @@ $( document ).ready(function() {
 
         $( document ).tooltip();
 
+        $('#form_reenvio').submit(function(e){
+
+            var formObj = $(this);
+            var formURL = "controlador/rutas.php";
+            var formData = new FormData(this);
+            formData.append('ruta', 'reasignar');
+            $.ajax({
+                url: formURL,
+            type: 'POST',
+                data:  formData,
+            mimeType:"multipart/form-data",
+            contentType: false,
+                cache: false,
+                processData:false,
+            success: function(data, textStatus, jqXHR)
+            {
+              if($('#descripcion').val()==''){alertify.alert("debe ingresar una descripción");return false;}
+              $('#form_reenvio')[0].reset();
+              $('#myModal').modal('hide');
+              alertify.alert(data);
+              $("#btn_solicitudes").click();
+            },
+             error: function(jqXHR, textStatus, errorThrown)
+             {
+             $("#errores").html(errorThrown);
+             }        
+            });
+            e.preventDefault();
+    });
+
         $('body').delegate('#no_acuerdo','click',function(){
             var id= $(this).data('id');
             console.log(id);
@@ -28,7 +58,8 @@ $( document ).ready(function() {
                       var json_obj = $.parseJSON(response);
 
                      for (var i in json_obj)
-                      {
+                      {   
+                        var id  =json_obj[i].id;
                           var dependencia  =json_obj[i].dependencia;
                           var descripcion =json_obj[i].descripcion;
                           var fichero =json_obj[i].fichero;
@@ -44,7 +75,7 @@ $( document ).ready(function() {
                           var respuesta =json_obj[i].respuesta;
                           var fichero_respuesta =json_obj[i].fichero_respuesta;
                       } 
-
+                         $('#id').val(id);  
                         $('#dependencia').val(dependencia);    
                         $('#descripcion').val(descripcion);    
                         $('#fichero').val(fichero);    

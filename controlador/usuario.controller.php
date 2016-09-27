@@ -46,8 +46,44 @@ class Usuario extends Db
 						if($b==2){
 						$r='<img height="42" src="images/solucion.png" title="La solicitud ha sido respondida">';
 						}
+						if($b==3){
+						$r='<img height="42" src="images/reasing.png" title="La solicitud ha sido reasignada">';
+						}
 						return $r;
 					}
+
+					public function reasignar($id,$descripcion,$dependencia,$fichero,$id_usuario,$estado,$id_asignado,$fk_id_ciudad,$fk_cod_pais,$fecha,$fecha_asignacion,$fecha_respuesta,$id_funcionario,$respuesta,$fichero_respuesta){
+
+									$conexion = $this->conexion();
+
+									session_start();
+
+									$retorna = '';
+
+									$consulta = "update gestor_solicitudes.solicitud set estado = 3 where id = $id";
+ 								
+									if ($conexion->query($consulta) === TRUE) {
+									    $retorna .= "Solicitud editada correctamente";
+									} else {
+									    $retorna .= "Solicitud no editada" . $conexion->error;
+									}
+
+									$retorna = '';
+									$consulta = "INSERT INTO
+									 gestor_solicitudes.solicitud
+									 (id,dependencia,descripcion,fichero,id_usuario,estado
+									 	,id_asignado,fk_id_ciudad,fk_cod_pais,fecha)
+									  VALUES ( NULL,NULL,'$descripcion','$fichero','$id_usuario','0',NULL,'$fk_id_ciudad','CO','".date("Y-m-d")."');";
+ 								
+									if ($conexion->query($consulta) === TRUE) {
+									    $retorna .= "Solicitud reasignada correctamente";
+									} else {
+									    $retorna .= "Solicitud no reasignada" . $conexion->error;
+									}
+									return $retorna;
+					}
+
+
 
 					public function listar_solicitud_id($id){
 
@@ -115,7 +151,7 @@ class Usuario extends Db
 						         <td>'.$fila[11].'</td>
 						         <td><textarea>'.$fila[13].'</textarea></td>
 						         <td>'.$fila[16].'</td>
-						         <td>'.($fila[14]!=''?'<a target="_blank" href="documentos/'.$fila[14].'">':'').'<img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td><td>'.($fila[14]!=''?'<button type="button" id="no_acuerdo" data-id="'.$fila[0].'" title="Click si no estas de acuerdo con la respuesta esta opcion solo estara disponible 8 dias despues de ser resuelta la solicitud." class="btn btn-danger">No Acuerdo</button></td>':'');
+						         <td>'.($fila[14]!=''?'<a target="_blank" href="documentos/'.$fila[14].'">':'').'<img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td><td>'.($fila[5]==2?'<button type="button" id="no_acuerdo" data-id="'.$fila[0].'" title="Click si no estas de acuerdo con la respuesta esta opcion solo estara disponible 8 dias despues de ser resuelta la solicitud." class="btn btn-danger">No Acuerdo</button></td>':'');
 						  		  $retorna .= '</tr><script>$( function() { $( document ).tooltip();} );</script>';
 						    }
 					    $resultado->close();
