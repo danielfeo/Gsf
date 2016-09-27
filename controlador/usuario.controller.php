@@ -48,6 +48,33 @@ class Usuario extends Db
 						}
 						return $r;
 					}
+
+					public function listar_solicitud_id($id){
+
+						$retorna='';
+
+						$conexion = $this->conexion();
+
+						session_start();
+
+					    $array = array();
+
+						$id_usuario = $_SESSION['id'];
+
+						$consulta = "select * from solicitud where id=$id";
+
+						if ($resultado = $conexion->query($consulta)) {
+						     while($row =mysqli_fetch_assoc($resultado)){
+						    	$array[] = $row;
+
+						    }
+						}
+
+						return $array;
+
+					}
+
+
 					public function listar_solicitudes(){
 
 						$retorna='';
@@ -88,7 +115,7 @@ class Usuario extends Db
 						         <td>'.$fila[11].'</td>
 						         <td><textarea>'.$fila[13].'</textarea></td>
 						         <td>'.$fila[16].'</td>
-						         <td>'.($fila[14]!=''?'<a target="_blank" href="documentos/'.$fila[14].'">':'').'<img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td><td>'.($fila[14]!=''?'<button type="button" data-id="'.$fila[0].'" title="Click si no estas de acuerdo con la respuesta esta opcion solo estara disponible 8 dias despues de ser resuelta la solicitud." class="btn btn-danger">No Acuerdo</button></td>':'');
+						         <td>'.($fila[14]!=''?'<a target="_blank" href="documentos/'.$fila[14].'">':'').'<img height="42" src="http://icons.iconarchive.com/icons/graphicloads/filetype/128/pdf-icon.png"></a></td><td>'.($fila[14]!=''?'<button type="button" id="no_acuerdo" data-id="'.$fila[0].'" title="Click si no estas de acuerdo con la respuesta esta opcion solo estara disponible 8 dias despues de ser resuelta la solicitud." class="btn btn-danger">No Acuerdo</button></td>':'');
 						  		  $retorna .= '</tr><script>$( function() { $( document ).tooltip();} );</script>';
 						    }
 					    $resultado->close();

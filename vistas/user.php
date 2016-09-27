@@ -3,6 +3,47 @@
 <div id="loading">
   <img id="loading-image" src="http://3.bp.blogspot.com/-JeGYJyA7z2k/VNUMuthhjDI/AAAAAAAAATk/LnNLV4OGz-A/s1600/iconoCargando-1-.gif"  alt="Loading..." />
 </div>
+
+<!--modal NO acepto-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Formulario de reenvio solicitud</h4>
+      </div>
+      <div class="modal-body">           
+            <form>
+              <div class="form-group">
+                <label for="email">Ingresa la descripcion de el no acuerdo a la respuesta</label>
+                <textarea class="form-control" id="solicitud"></textarea>
+                <input type="hidden" id="dependencia" name="dependencia">
+                <input type="hidden" id="descripcion" name="descripcion">
+                <input type="hidden" id="fichero" name="fichero">
+                <input type="hidden" id="id_usuario" name="id_usuario">
+                <input type="hidden" id="estado" name="estado">
+                <input type="hidden" id="id_asignado" name="id_asignado">
+                <input type="hidden" id="fk_id_ciudad" name="fk_id_ciudad">
+                <input type="hidden" id="fk_cod_pais" name="fk_cod_pais">
+                <input type="hidden" id="fecha" name="fecha">
+                <input type="hidden" id="fecha_asignacion" name="fecha_asignacion">
+                <input type="hidden" id="fecha_respuesta" name="fecha_respuesta">
+                <input type="hidden" id="id_funcionario" name="id_funcionario">
+                <input type="hidden" id="respuesta" name="respuesta">
+                <input type="hidden" id="fichero_respuesta" name="fichero_respuesta">
+              </div>
+              <div class="form-group">
+                <button type="button"  id="reenviar" class="btn btn-info">Enviar</button>
+              </div>
+              
+            </form>
+      </div>
+    
+    </div>
+  </div>
+</div>
+<!-- /.modal -->
+
 <div class="container-fluid">
 
     <div class="panel panel-default">

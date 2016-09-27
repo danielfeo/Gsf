@@ -64,9 +64,20 @@ include_once ('admin.controller.php');
 }//FIN METODO SOLICITUD
 
 
+//METODO SOLICITUD ID
+if ($_REQUEST['ruta'] == 'listar_solicitud_id'){
 
+$id=$_REQUEST["id"];
 
+include_once ('usuario.controller.php');
 
+$usuario = new Usuario();
+
+echo json_encode($usuario->listar_solicitud_id($id));
+
+}
+
+//FIN SOLICITUD ID
 
 if ($_REQUEST['ruta'] == 'solicitud'){
 
