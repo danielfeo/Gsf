@@ -15,7 +15,7 @@
       <div class="modal-body">           
             <form>
               <div class="form-group">
-                <label for="email">Ingresa la descripcion de el no acuerdo a la respuesta</label>
+                <label for="email">Ingresa la descripcion de el no acuerdo a la respuesta </label>
                 <textarea class="form-control" id="solicitud"></textarea>
                 <input type="hidden" id="dependencia" name="dependencia">
                 <input type="hidden" id="descripcion" name="descripcion">
