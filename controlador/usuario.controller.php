@@ -21,6 +21,10 @@ class Usuario extends Db
 					
 					public function insertar_solicitud($tipo_solicitud,$id_usuario,$ciudad,$descripcion,$filePath){
 
+									$conexion = $this->conexion();
+
+									session_start();
+
 								    $retorna = '';
 									$consulta = "INSERT INTO
 									 gestor_solicitudes.solicitud
