@@ -28,7 +28,7 @@ $( document ).ready(function() {
                 processData:false,
             success: function(data, textStatus, jqXHR)
             {
-              if($('#descripcion').val()==''){alertify.alert("debe ingresar una descripción");return false;}
+              if($('#descripcion_r').val()==''){alertify.alert("debe ingresar una descripción");return false;}
               $('#form_reenvio')[0].reset();
               $('#myModal').modal('hide');
               alertify.alert(data);
