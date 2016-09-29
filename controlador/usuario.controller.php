@@ -23,7 +23,7 @@ class Usuario extends Db
 
 									$conexion = $this->conexion();
 
-									session_start();
+									
 
 								    $retorna = '';
 									$consulta = "INSERT INTO
