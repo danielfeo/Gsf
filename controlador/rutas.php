@@ -78,21 +78,21 @@ echo json_encode($usuario->listar_solicitud_id($id));
 }
 
 if ($_REQUEST['ruta'] == 'reasignar'){
-$id = $_REQUEST["id"];
-$descripcion = $_REQUEST["descripcion"];
-$dependencia = $_REQUEST["dependencia"];
-$fichero = $_REQUEST["fichero"];
-$id_usuario = $_REQUEST["id_usuario"];
-$estado = $_REQUEST["estado"];
-$id_asignado = $_REQUEST["id_asignado"];
-$fk_id_ciudad = $_REQUEST["fk_id_ciudad"];
-$fk_cod_pais = $_REQUEST["fk_cod_pais"];
-$fecha = $_REQUEST["fecha"];
-$fecha_asignacion = $_REQUEST["fecha_asignacion"];
-$fecha_respuesta = $_REQUEST["fecha_respuesta"];
-$id_funcionario = $_REQUEST["id_funcionario"];
-$respuesta = $_REQUEST["respuesta"];
-$fichero_respuesta = $_REQUEST["fichero_respuesta"];
+$id = $_REQUEST["idr"];
+$descripcion = $_REQUEST["descripcionr"];
+$dependencia = $_REQUEST["dependenciar"];
+$fichero = $_REQUEST["ficheror"];
+$id_usuario = $_REQUEST["id_usuarior"];
+$estado = $_REQUEST["estador"];
+$id_asignado = $_REQUEST["id_asignador"];
+$fk_id_ciudad = $_REQUEST["fk_id_ciudadr"];
+$fk_cod_pais = $_REQUEST["fk_cod_paisr"];
+$fecha = $_REQUEST["fechar"];
+$fecha_asignacion = $_REQUEST["fecha_asignacionr"];
+$fecha_respuesta = $_REQUEST["fecha_respuestar"];
+$id_funcionario = $_REQUEST["id_funcionarior"];
+$respuesta = $_REQUEST["respuestar"];
+$fichero_respuesta = $_REQUEST["fichero_respuestar"];
 
 
 include_once ('usuario.controller.php');

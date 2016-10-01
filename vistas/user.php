@@ -16,7 +16,7 @@
             <form id="form_reenvio">
               <div class="form-group">
                 <label for="descripcion">Ingresa la descripcion de el no acuerdo a la respuesta </label>
-                <textarea class="form-control" id="descripcion_r" name="descripcion"></textarea>
+                <textarea class="form-control" id="descripcion_r" name="descripcionr"></textarea>
                 <input type="hidden" id="dependencia" name="dependenciar">
                 <input type="hidden" id="fichero" name="ficheror">
                 <input type="hidden" id="id" name="idr">
