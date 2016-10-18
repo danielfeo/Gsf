@@ -30,7 +30,7 @@ class Usuario extends Db
 									 solicitud
 									 (id,dependencia,descripcion,fichero,id_usuario,estado
 									 	,id_asignado,fk_id_ciudad,fk_cod_pais,fecha)
-									  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'$ciudad','CO','".date("Y-m-d")."');";
+									  VALUES ( NULL,'$tipo_solicitud','$descripcion','$filePath','$id_usuario','0',NULL,'$ciudad','CO','".date("Y-m-d")."');";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Solicitud tramitada correctamente";

@@ -11,13 +11,13 @@ $f2 = $_REQUEST['fechaf'];
 $con = new DB;
 $conexion = $con->conexion();
 
-$consulta = "SELECT COUNT(`solicitud`.`id`),`dependencias`.`dependencia`
+$consulta = "SELECT COUNT(`solicitud`.`id`),`solicitud`.`dependencia` AS tipo,`dependencias`.`dependencia`
  FROM solicitud,dependencias
- WHERE (fecha BETWEEN '$f1' AND '$f2' )AND `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`";
+ WHERE (fecha BETWEEN '$f1' AND '$f2' )AND `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`,`dependencia`";
 
- $consulta_1 = "SELECT COUNT(`solicitud`.`id`),`dependencias`.`dependencia`
+ $consulta_1 = "SELECT COUNT(`solicitud`.`id`),`solicitud`.`dependencia` AS tipo,`dependencias`.`dependencia`
  FROM solicitud,dependencias
- WHERE (fecha_respuesta BETWEEN '$f1' AND '$f2' )AND `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`";
+ WHERE (fecha_respuesta BETWEEN '$f1' AND '$f2' )AND `solicitud`.`id_asignado` = dependencias.`id` GROUP BY `id_asignado`,`dependencia`";
 
  ?>
  <link rel="stylesheet" href="https://bootswatch.com/spacelab/bootstrap.min.css" >
@@ -53,6 +53,7 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
 
   <tr style="background-color: #096cce;">
     <td  style="width:400px;">CANTIDAD DE SOLICITUDES REALIZADAS POR LOS USUARIOS</td>
+    <td  style="width:286px;">Tipo</td>  
     <td  style="width:286px;">Dependencia</td>  
   </tr>
  </thead>
@@ -62,7 +63,8 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
                 while ($fila = $resultado->fetch_row()) {
 
                      echo ' <tr><td> '.$fila[0].' </td>
-                     <td>'.$fila[1].'</td> </tr>';
+                     <td> '.$fila[1].' </td>
+                     <td>'.$fila[2].'</td> </tr>';
       }}
       ?>
  
@@ -74,6 +76,7 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
 
   <tr style="background-color: #096cce;">
     <td  style="width:400px;">CANTIDAD DE SOLICITUDES RESUELTAS</td>
+    <td  style="width:286px;">Tipo</td>  
     <td  style="width:286px;">Dependencia</td>  
   </tr>
   </thead>
@@ -82,8 +85,9 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
      if ($resultado = $conexion->query($consulta_1)) {
                 while ($fila = $resultado->fetch_row()) {
 
-                     echo ' <tr><td> '.$fila[0].' </td>
-                     <td>'.$fila[1].'</td> </tr>';
+                      echo ' <tr><td> '.$fila[0].' </td>
+                     <td> '.$fila[1].' </td>
+                     <td>'.$fila[2].'</td> </tr>';
       }}
       ?>
  

@@ -67,8 +67,7 @@
                          <option value="1" >Petición</option>
                          <option value="2" >Queja</option>
                          <option value="3" >Reclamo</option>
-                         <option value="4" >Peticion</option>
-                         <option value="5" >Solicitudes</option>
+                         <option value="4" >Solicitud</option>
                     </select>
                 </label>
             </div>

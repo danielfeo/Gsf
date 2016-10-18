@@ -6,8 +6,8 @@
         switch ($caso) {
         case '1':
              $reporte = "/Formato_Sesiones_PDF.php";
-             $tipo='letter';
-             $orientacion = 'P';
+              $tipo=array(300,300);
+             $orientacion = 'L';
             break;
         case '2':
              $reporte = "/Formato_solicitudes.php";

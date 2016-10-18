@@ -13,6 +13,7 @@ $conexion = $con->conexion();
 
 $consulta = "SELECT
     `dependencias`.`dependencia`
+    , `solicitud`.`dependencia`
     , `solicitud`.`descripcion`
     , `usuario`.`documento`
     , `usuario`.`nombre`
@@ -67,6 +68,7 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
   <tr style="background-color: #096cce;">
    
     <td  style="width:400px;">dependencia</td>
+    <td  style="width:400px;">tipo</td>
     <td  style="width:400px;">descripcion</td>
     <td  style="width:400px;">documento</td>
     <td  style="width:400px;">nombre</td>
@@ -87,6 +89,7 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
                                 <td>'.$fila[4].'</td> 
                                 <td>'.$fila[5].'</td> 
                                 <td>'.$fila[6].'</td> 
+                                <td>'.$fila[7].'</td> 
                               
 
 
