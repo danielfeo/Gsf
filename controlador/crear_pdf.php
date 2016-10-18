@@ -17,8 +17,8 @@
 
         case '3':
              $reporte = "/Formato_tiempos.php";
-             $tipo=array(500,800);
-             $orientacion = 'P';
+             $tipo=array(700,500);
+             $orientacion = 'L';
             break;
         
         default:

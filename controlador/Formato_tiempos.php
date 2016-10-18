@@ -25,6 +25,9 @@ $consulta = "SELECT
     , `solicitud`.`fecha`
     , `solicitud`.`fecha_asignacion`
     ,`solicitud`.`fecha_respuesta`
+     , func.`nombre`
+    , `func`.`apellidos`
+
 FROM
     `usuario`
     INNER JOIN `solicitud` 
@@ -35,6 +38,9 @@ FROM
         ON (`paises`.`Codigo` = `solicitud`.`fk_cod_pais`)
     INNER JOIN `ciudades` 
         ON (`ciudades`.`idCiudades` = `solicitud`.`fk_id_ciudad`)
+    INNER JOIN `usuario` AS func
+  ON func.`id` = `solicitud`.`id_funcionario`
+      where (fecha_respuesta BETWEEN '$f1' AND '$f2' )
        ;";
 
  ?>
@@ -81,6 +87,8 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
     <td  style="width:100px;">Fecha solicitud</td>
     <td  style="width:100px;">Fecha asignacion</td>
     <td  style="width:100px;">Fecha respuesta </td>
+    <td  style="width:100px;">Nombre Funcionario </td>
+    <td  style="width:100px;">Apellido Funcionario </td>
     <td  style="width:100px;">Tiempo de respuesta</td>
   </tr>
  </thead>
@@ -88,13 +96,14 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
     <?php
      if ($resultado = $conexion->query($consulta)) {
                 while ($fila = $resultado->fetch_row()) {
-                         $asig = strtotime($fila[7]);
-                         $resp = strtotime($fila[9]);
+                         $asig = strtotime($fila[9]);
+                         $resp = strtotime($fila[10]);
                          $datediff = $resp - $asig; 
                          $diferencia =  floor($datediff/(60*60*24));
                          if($resp==""){
-                         	$diferencia = "No resuelta en estos ";
+                         	$diferencia = "No resuelta en estas fechas ";
                          }
+
 
                      echo ' <tr><td>'.$fila[0].'</td>
                                 <td>'.$fila[1].'</td> 
@@ -106,6 +115,9 @@ table {margin-top: 10%; border-collapse: collapse; text-align: left; width: 100%
                                 <td>'.$fila[7].'</td>
                                 <td>'.$fila[8].'</td> 
                                 <td>'.$fila[9].'</td> 
+                                <td>'.$fila[10].'</td> 
+                                <td>'.$fila[11].'</td>
+                                <td>'.$fila[12].'</td>
                                 <td>'.$diferencia.' Dias</td></tr>';
       }}
       ?>
