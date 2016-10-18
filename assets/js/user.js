@@ -42,6 +42,8 @@ $( document ).ready(function() {
             e.preventDefault();
     });
 
+
+
         $('body').delegate('#no_acuerdo','click',function(){
             var id= $(this).data('id');
             console.log(id);
@@ -117,7 +119,7 @@ $( document ).ready(function() {
         	        success: function(formularioResultado)
         	         {
         	         $('#cont_tabla_solicitudes').html(formularioResultado);
-        	         $('#listTable').dataTable( { "sPaginationType": "full_numbers" , "language": {
+        	         $('#listTable').dataTable( { responsive: true,"sPaginationType": "full_numbers" , "language": {
                             "url": "assets/js/Spanish.json"
                         }} ); 
                      }

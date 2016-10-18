@@ -93,7 +93,7 @@ $('#btn_responder_solicitudes').click(function(){
         success: function(formularioResultado)
          {
          $('#asignacion').html(formularioResultado);
-           table = $('#asig_table').DataTable( { "sPaginationType": "full_numbers" , "language": {
+           table = $('#asig_table').DataTable( {responsive: true,"sPaginationType": "full_numbers" , "language": {
                     "url": "assets/js/Spanish.json"
                 }} ); 
          }      

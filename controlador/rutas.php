@@ -27,7 +27,7 @@ $filePath = $uploadDir . $fileName;
 		 exit();	
 	}
 
-	if (!($fileType =="text/pdf" || $fileType =="application/pdf")){
+	if (!($fileType =="text/pdf" || $fileType =="application/pdf" || $fileType =="image/jpeg")){
 	echo 'El archivo debe ser formato pdf';
 			 exit();
 			 }
@@ -54,7 +54,7 @@ $filePath = $randName . '.' . $ext;
 
 }
 
-include_once ('admin.controller.php');
+include_once('admin.controller.php');
 
  $Admin = new Admin();
   
@@ -69,7 +69,7 @@ if ($_REQUEST['ruta'] == 'listar_solicitud_id'){
 
 $id=$_REQUEST["id"];
 
-include_once ('usuario.controller.php');
+include_once('usuario.controller.php');
 
 $usuario = new Usuario();
 
@@ -95,7 +95,7 @@ $respuesta = $_REQUEST["respuestar"];
 $fichero_respuesta = $_REQUEST["fichero_respuestar"];
 
 
-include_once ('usuario.controller.php');
+include_once('usuario.controller.php');
 
 $usuario = new Usuario();
 
@@ -132,7 +132,7 @@ $filePath = $uploadDir . $fileName;
 		 exit();	
 	}
 
-	if (!($fileType =="text/pdf" || $fileType =="application/pdf")){
+	if (!($fileType =="text/pdf" || $fileType =="application/pdf" || $fileType =="image/jpeg")){
 	echo 'El archivo debe ser formato pdf';
 			 exit();
 			 }
@@ -159,7 +159,7 @@ $filePath = $randName . '.' . $ext;
 
 }
 
-include_once ('Usuario.controller.php');
+include_once('usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -173,7 +173,7 @@ if ($_REQUEST['ruta'] == 'listar_solicitud_asignador'){
 
 
 
-include_once ('asignador.controller.php');
+include_once('asignador.controller.php');
 
  $super = new Asignador();
   
@@ -187,7 +187,7 @@ if ($_REQUEST['ruta'] == 'habilitar_usuario_misional'){
 
 $id_usuario=$_REQUEST['id'];
 
-include_once ('super.controller.php');
+include_once('super.controller.php');
 
  $super = new Super();
   
@@ -200,7 +200,7 @@ if ($_REQUEST['ruta'] == 'inhabilitar_usuario_misional'){
 
 $id_usuario=$_REQUEST['id'];
 
-include_once ('super.controller.php');
+include_once('super.controller.php');
 
  $super = new Super();
   
@@ -213,7 +213,7 @@ if ($_REQUEST['ruta'] == 'editar_usuario_misional'){
 
 	$id_usuario=$_REQUEST['id_usuario'];
 
- include_once ('super.controller.php');
+ include_once('super.controller.php');
 
  $super = new Super();
   
@@ -233,7 +233,7 @@ if ($_REQUEST['ruta'] == 'alterar_usuario_misional'){
                     $editar_email = $_REQUEST['editar_email'];
                     $editar_tipo = $_REQUEST['editar_tipo'];
 
- include_once ('super.controller.php');
+ include_once('super.controller.php');
 
  $super = new Super();
  
@@ -248,7 +248,7 @@ if ($_REQUEST['ruta'] == 'alterar_usuario_misional'){
 
 if ($_REQUEST['ruta'] == 'listar_admin'){
 
-  include_once ('super.controller.php');
+  include_once('super.controller.php');
 
  $super = new Super();
   
@@ -261,7 +261,7 @@ if ($_REQUEST['ruta'] == 'listar_admin'){
 
 if ($_REQUEST['ruta'] == 'listar_solicitud_admin'){
 
-  include_once ('admin.controller.php');
+  include_once('admin.controller.php');
 
  $Admin = new Admin();
   
@@ -273,7 +273,7 @@ if ($_REQUEST['ruta'] == 'listar_solicitud_admin'){
 
 if ($_REQUEST['ruta'] == 'traer_dependencia'){
 
- include_once ('admin.controller.php');
+ include_once('admin.controller.php');
 
  $Admin = new Admin();
  
@@ -284,7 +284,7 @@ if ($_REQUEST['ruta'] == 'traer_dependencia'){
 
 if ($_REQUEST['ruta'] == 'listar_solicitudes'){
 
-  include_once ('Usuario.controller.php');
+  include_once('usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -295,7 +295,7 @@ if ($_REQUEST['ruta'] == 'listar_solicitudes'){
 
 if ($_REQUEST['ruta'] == 'listar_paises'){
 
-  include_once ('Usuario.controller.php');
+  include_once('usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -309,7 +309,7 @@ if ($_REQUEST['ruta'] == 'logear'){
 
  $documento=$_REQUEST['documento'];
  $clave=$_REQUEST['clave'];
- include_once ('Usuario.controller.php');
+ include_once('usuario.controller.php');
 
  $Usuario = new Usuario();
   
@@ -324,7 +324,7 @@ if ($_REQUEST['ruta'] == 'asignar_solicitud_misional'){
  $id=$_REQUEST['id'];
  $tipo=$_REQUEST['tipo'];
 
- include_once ('asignador.controller.php');
+ include_once('asignador.controller.php');
     
 
  $Asignador = new Asignador();
@@ -338,7 +338,7 @@ if ($_REQUEST['ruta'] == 'listar_ciudades'){
 
  $pais=$_REQUEST['pais'];
 
- include_once ('Usuario.controller.php');
+ include_once('usuario.controller.php');
     
 
  $Usuario = new Usuario();
@@ -363,7 +363,7 @@ if ($_REQUEST['ruta'] == 'registar_usuario_misional'){
  $direccion=$_REQUEST['direccion'];
  $tipo=$_REQUEST['tipo'];
 
-include_once ('super.controller.php');
+include_once('super.controller.php');
 
  $Super = new Super();
 
@@ -387,7 +387,7 @@ if ($_REQUEST['ruta'] == 'registar_usuario'){
  $ciudad=$_REQUEST['ciudad'];
  $direccion=$_REQUEST['direccion'];
 
- include_once ('Usuario.controller.php');
+ include_once('usuario.controller.php');
 
 
  $Usuario = new Usuario();

@@ -14,6 +14,9 @@ class Admin extends Db
 						if($b==2){
 						$r='images/solucion.png';
 						}
+						if($b==3){
+						$r='<img height="42" src="images/reasing.png" title="La solicitud ha sido reasignada">';
+						}
 						return $r;
 					}
 
@@ -112,7 +115,7 @@ class Admin extends Db
 						u.`fk_id_ciudad` = `ciudades`.`idCiudades` and
 						 s.id_asignado = $rol and s.estado = 1; ";
 
-						$retorna .= '<table id="asig_table" border="1"  cellpadding="5">
+						$retorna .= '<table id="asig_table" border="1"  class="table table-striped table-bordered dt-responsive nowrap" cellpadding="5">
 					        <thead>
 					            <tr>
 					                <th>Descripción</th>

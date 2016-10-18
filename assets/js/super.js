@@ -48,7 +48,7 @@ $('#tabla_admin').show();
         success: function(formularioResultado)
          {
          $('#tabla_admin').html(formularioResultado);
-           table = $('#admin_table').DataTable( { "sPaginationType": "full_numbers" , "language": {
+           table = $('#admin_table').DataTable( {  responsive: true,"sPaginationType": "full_numbers" , "language": {
                     "url": "assets/js/Spanish.json"
                 }} ); 
          }      

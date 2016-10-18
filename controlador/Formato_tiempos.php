@@ -25,14 +25,14 @@ $consulta = "SELECT
     , `solicitud`.`fecha_asignacion`
     ,`solicitud`.`fecha_respuesta`
 FROM
-    `gestor_solicitudes`.`usuario`
-    INNER JOIN `gestor_solicitudes`.`solicitud` 
+    `usuario`
+    INNER JOIN `solicitud` 
         ON (`usuario`.`id` = `solicitud`.`id_usuario`)
-    INNER JOIN `gestor_solicitudes`.`dependencias` 
+    INNER JOIN `dependencias` 
         ON (`solicitud`.`id_asignado` = `dependencias`.`id`)
-    INNER JOIN `gestor_solicitudes`.`paises` 
+    INNER JOIN `paises` 
         ON (`paises`.`Codigo` = `solicitud`.`fk_cod_pais`)
-    INNER JOIN `gestor_solicitudes`.`ciudades` 
+    INNER JOIN `ciudades` 
         ON (`ciudades`.`idCiudades` = `solicitud`.`fk_id_ciudad`)
        ;";
 

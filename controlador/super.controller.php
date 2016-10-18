@@ -31,7 +31,7 @@ class Super extends Db
 						$id_usuario = $_SESSION['id'];
 
 					 	$consulta = "select * from usuario where rol BETWEEN 2 and 7 or rol = 9 or rol = 10 ";
-						$retorna .= '<table id="admin_table" border="1"  cellpadding="5">
+						$retorna .= '<table id="admin_table" class="table table-striped table-bordered dt-responsive nowrap" border="1"  cellpadding="5">
 					        <thead>
 					            <tr>
 					                <th>Documento</th>

@@ -15,6 +15,9 @@ class Asignador extends Db
 						if($b==2){
 						$r='images/solucion.png';
 						}
+						if($b==3){
+						$r='<img height="42" src="images/reasing.png" title="La solicitud ha sido reasignada">';
+						}
 						return $r;
 					}
 
@@ -64,7 +67,7 @@ class Asignador extends Db
 
 						$id_usuario = $_SESSION['id'];
 
-					 	$consulta = "SELECT * FROM `solicitud` where estado = 0 ";
+					 	$consulta = "SELECT * FROM solicitud where estado = 0 ";
 						$retorna .= '<table id="asig_table" border="1"  cellpadding="5">
 					        <thead>
 					            <tr>

@@ -127,7 +127,7 @@ class Usuario extends Db
 
 					 	$consulta = "call sp_taer_solicitudes($id_usuario);";
 						
-						$retorna .= '<table id="listTable" border="1"  cellpadding="5" style="text-align: center;">
+						$retorna .= '<table id="listTable" border="1"  cellpadding="5" class="table table-striped table-bordered dt-responsive nowrap" style="text-align: center;">
 					        <thead>
 					            <tr>
 					                <th>Descripción</th>
@@ -227,7 +227,6 @@ class Usuario extends Db
 							    $resultado->close();
 								}
 					 return $retorna;
-					 echo $consulta;
 					}
 
 

@@ -55,7 +55,7 @@
 
                           </label>
 
-                          <input lass="form-control"  type="file" name="fichero" id="fichero"> 
+                          <input lass="form-control"  type="file" accept="image/*" name="fichero" id="fichero"> 
 
 			                  </div>
 

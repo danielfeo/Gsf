@@ -1,16 +1,16 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>GESTOR SOLICITUDES PQR´S FISCALÍA</title>
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/alertify.min.css" />
+  <head>
+    <title>GESTOR SOLICITUDES PQR´S FISCALÍA</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/alertify.min.css" />
 
 
-       <link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.10/css/dataTables.bootstrap.min.css">
    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.1/css/responsive.bootstrap.min.css">
 
 
@@ -20,101 +20,72 @@
 
 <!-- tema de bootstrap bootswatch -->
 <link rel="stylesheet" href="assets/css/space.bootstrap.min.css" >
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	
-	</head>
-	<body>
+  
+  </head>
+  <body style="margin-top:20px">
 
-	<nav class="navbar navbar-default">
+    
+  <nav class="navbar navbar-default">
         <div class="container-fluid">
-          <div class="navbar-header">
+        <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Gestor Solicitudes Fiscalia (PQRS)</a>
           </div>
+          
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
-		
-	<nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-			<img class="img_logo" src="images/logo_fiscalia_azul.png" /><a class="navbar-brand" href="#"> Gestor Solicitudes Fiscalia (PQRS)</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li id="btn_registro"><a href="#" >Registro</a></li>
-					<li id="btn_login"><a href="#" >Iniciar sesion</a></li>
-					<li id="btn_solicitud"><a href="#" >Solicitud</a></li>
-					<li id="btn_admin"><a href="#">Crear administradores</a></li>
-					<li id="lista_Admin"><a href="#">Ver administradores</a></li>
-					<li id="btn_solicitudes"><a href="#" >Ver solicitudes</a></li>
-					<li id="btn_crear_usuarios"><a href="#" >Crear usuarios</a></li>
-					<li id="btn_asignar"><a href="#" >Asignar solicitudes</a></li>
-					<li id="btn_reporte"><a href="#" >Ver reporte de solicitudes</a></li>
-					<li id="btn_responder_solicitudes"><a href="#" >Responder solicitudes</a></li>
-					
-					
-					
-				</ul>
+        <ul class="nav navbar-nav">
+          <li id="btn_registro"><a href="#" >Registro</a></li>
+          <li id="btn_login"><a href="#" >Iniciar sesion</a></li>
+          <li id="btn_solicitud"><a href="#" >Solicitud</a></li>
+          <li id="btn_admin"><a href="#">Crear administradores</a></li>
+          <li id="lista_Admin"><a href="#">Ver administradores</a></li>
+          <li id="btn_solicitudes"><a href="#" >Ver solicitudes</a></li>
+          <li id="btn_crear_usuarios"><a href="#" >Crear usuarios</a></li>
+          <li id="btn_asignar"><a href="#" >Asignar solicitudes</a></li>
+          <li id="btn_reporte"><a href="#" >Ver reporte de solicitudes</a></li>
+          <li id="btn_responder_solicitudes"><a href="#" >Responder solicitudes</a></li>
+          
+          
+          
+        </ul>
             <ul class="nav navbar-nav navbar-right">
                  <li id="btn_cerrar"><a href="#" >Salir</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-				<!-- Contenedor principal Vistas -->
-					<div id="main">
 
-										
-					</div>
 
-		
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/alertify.min.js"></script>
-			  <script src=" https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+        <!-- Contenedor principal Vistas -->
+          <div id="main">
+
+                    
+          </div>
+
+    
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/main.js"></script>
+      <script src="assets/js/alertify.min.js"></script>
+              <script src=" https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
    <script src=" https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
    <script src=" https://cdn.datatables.net/responsive/2.0.1/js/dataTables.responsive.min.js"></script>
    <script src=" https://cdn.datatables.net/responsive/2.0.1/js/responsive.bootstrap.min.js"></script>
-     		<script src="assets/js/bootstrap.min.js"></script>
- 		    <script src="assets/js/jquery-ui.js"></script>
-		  
-		    
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
+      
+        
 
 
 
-	</body>
+  </body>
 </html>

@@ -95,7 +95,7 @@
                      <div class="panel-heading">Selecciona archivo con todos los documentos en pdf</div>
                 
               <div class="panel-body">
-                    <input  type="file" name="file1" id="file1" title="selecciona el pdf con todos los documentos nesesarios identificacion y documentos de apoyo a la solicitud.">
+                    <input  type="file" name="file1" accept="image/*" title="selecciona el pdf con todos los documentos nesesarios identificacion y documentos de apoyo a la solicitud.">
 
             
             </div>
