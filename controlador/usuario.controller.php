@@ -27,7 +27,7 @@ class Usuario extends Db
 
 								    $retorna = '';
 									$consulta = "INSERT INTO
-									 gestor_solicitudes.solicitud
+									 solicitud
 									 (id,dependencia,descripcion,fichero,id_usuario,estado
 									 	,id_asignado,fk_id_ciudad,fk_cod_pais,fecha)
 									  VALUES ( NULL,NULL,'$descripcion','$filePath','$id_usuario','0',NULL,'$ciudad','CO','".date("Y-m-d")."');";
@@ -64,7 +64,7 @@ class Usuario extends Db
 
 									$retorna = '';
 
-									$consulta = "update gestor_solicitudes.solicitud set estado = 3 where id = $id";
+									$consulta = "update solicitud set estado = 3 where id = $id";
  								
 									if ($conexion->query($consulta) === TRUE) {
 									    $retorna .= "Solicitud editada correctamente";
@@ -74,7 +74,7 @@ class Usuario extends Db
 
 									$retorna = '';
 									$consulta = "INSERT INTO
-									 gestor_solicitudes.solicitud
+									 solicitud
 									 (id,dependencia,descripcion,fichero,id_usuario,estado
 									 	,id_asignado,fk_id_ciudad,fk_cod_pais,fecha)
 									  VALUES ( NULL,NULL,'$descripcion','$fichero','$id_usuario','0',NULL,'$fk_id_ciudad','CO','".date("Y-m-d")."');";
@@ -227,6 +227,7 @@ class Usuario extends Db
 							    $resultado->close();
 								}
 					 return $retorna;
+					 echo $consulta;
 					}
 
 

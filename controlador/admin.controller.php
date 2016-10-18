@@ -68,8 +68,8 @@ class Admin extends Db
 								$consulta = "
 								SELECT DISTINCT `dependencias`.`dependencia`
 								FROM
-								    `gestor_solicitudes`.`usuario`
-								    INNER JOIN `gestor_solicitudes`.`dependencias` 
+								    `usuario`
+								    INNER JOIN `dependencias` 
 								        ON (`usuario`.`rol` = `dependencias`.`id`) WHERE `usuario`.rol = $rol; ";
  								
 			 						if ($resultado = $conexion->query($consulta)) {

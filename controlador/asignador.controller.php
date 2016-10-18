@@ -64,7 +64,7 @@ class Asignador extends Db
 
 						$id_usuario = $_SESSION['id'];
 
-					 	$consulta = "SELECT * FROM `gestor_solicitudes`.`solicitud` where estado = 0 ";
+					 	$consulta = "SELECT * FROM `solicitud` where estado = 0 ";
 						$retorna .= '<table id="asig_table" border="1"  cellpadding="5">
 					        <thead>
 					            <tr>
