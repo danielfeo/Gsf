@@ -3,7 +3,7 @@
 require_once('lib/nusoap.php');
 header('Content-type: text/html');
 
-$client = new nusoap_client('http://localhost:8081/gsf/controlador/soap_server.php');
+$client = new nusoap_client('http://localhost:8080/gsf/controlador/soap_server.php');
 
 $err = $client->getError();
 

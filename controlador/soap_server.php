@@ -30,7 +30,11 @@ $server = new nusoap_server;
 
 
 
-	$consulta = "select * from solicitud right join usuario on usuario.id = solicitud.id where  usuario.documento = $cedula";
+	$consulta = "SELECT solicitud.*
+FROM
+    `gestor_solicitudes`.`usuario`
+    INNER JOIN `gestor_solicitudes`.`solicitud` 
+        ON (`usuario`.`id` = `solicitud`.`id_usuario`) WHERE `documento` = $cedula";
 
 	if ($resultado = $conexion->query($consulta)) {
 	     while($row =mysqli_fetch_assoc($resultado)){
