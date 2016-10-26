@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">gestor_solicitudes</database>
+</source>
+<canvas>
+<table tablename="solicitud" alias="" left="97" top="105" width="190" height="158" />
+<table tablename="usuario" alias="" left="346" top="55" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "usuario" alias = "">id</from>
+<to tablename = "solicitud" alias = "">id_usuario</to>
+</join>
+</canvas>
+<grid>
+</grid>
+</querybuilder>
